@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}AgroZone{% endblock %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand">
+        <span class="nav-icon">🌱</span> AgroZone
+      </a>
+    </div>
+  </nav>
+
+  <main class="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>AgroZone · Rule-based Crop Recommendation · Data: ICAR / India State-wise Crop Database</p>
+  </footer>
+
+  <script src="{% static 'js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

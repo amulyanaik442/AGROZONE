@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+{% block title %}Crop Recommendation — AgroZone{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Crop Recommendation Engine</h1>
+  <p class="subtitle">Enter your location and soil health card values to get the top 5 recommended crops.</p>
+</div>
+
+{% if errors %}
+<div class="alert alert-error">
+  <strong>Please fix the following:</strong>
+  <ul>
+    {% for field, msgs in errors.items %}
+      {% for msg in msgs %}<li><strong>{{ field }}</strong>: {{ msg }}</li>{% endfor %}
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+
+<form method="POST" action="/recommend/result/" class="soil-form" id="soilForm">
+  {% csrf_token %}
+
+  <!-- ── Gate 1: Location ──────────────────────────────────────── -->
+  <section class="form-section">
+    <h2 class="section-title">
+      <span class="gate-badge">Gate 1</span> Location
+      <span class="weight-badge">🌦 Weather auto-fetched</span>
+    </h2>
+    <p class="section-hint">
+      GPS coordinates give the most accurate results — live weather is fetched automatically.
+      Or select your state manually.
+    </p>
+
+    <div class="location-tabs">
+      <button type="button" class="tab-btn active" onclick="switchTab('gps', this)">📍 GPS Coordinates</button>
+      <button type="button" class="tab-btn" onclick="switchTab('state', this)">🗺 Select State</button>
+    </div>
+
+    <div id="tab-gps" class="tab-panel">
+      <div class="field-row">
+        <div class="field">
+          <label>Latitude</label>
+          <input type="number" name="lat" step="any" placeholder="e.g. 12.9716"
+                 value="{{ prev.lat|default:'' }}" id="latInput"/>
+        </div>
+        <div class="field">
+          <label>Longitude</label>
+          <input type="number" name="lon" step="any" placeholder="e.g. 77.5946"
+                 value="{{ prev.lon|default:'' }}" id="lonInput"/>
+        </div>
+        <div class="field field-auto">
+          <label>&nbsp;</label>
+          <button type="button" class="btn btn-outline" onclick="getGPS()">📍 Use My Location</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-state" class="tab-panel hidden">
+      <div class="field" style="max-width:320px">
+        <label>State</label>
+        <select name="state_name">
+          <option value="">— select state —</option>
+          {% for s in states %}
+          <option value="{{ s }}" {% if prev.state_name == s %}selected{% endif %}>{{ s }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <p class="section-hint" style="margin-top:.5rem">
+        ℹ Weather will be fetched from the state's centroid coordinates.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Gate 2: pH ────────────────────────────────────────────── -->
+  <section class="form-section">
+    <h2 class="section-title">
+      <span class="gate-badge">Gate 2</span> physical properties
+      <span class="weight-badge">20 pts — soft scoring</span>
+    </h2>
+    <p class="section-hint">
+      pH now contributes to the score rather than eliminating crops — a poor pH match lowers the rank.
+    </p>
+    <div class="field-row">
+      <div class="field field-sm">
+        <label>Soil pH <span class="required">*</span></label>
+        <input type="number" name="ph" step="any" min="0" max="14" required
+               placeholder="e.g. 6.5" value="{{ prev.ph|default:'' }}"/>
+        <span class="unit">0 – 14</span>
+      </div>
+      <div class="field">
+        <label>Electrical Conductivity (EC)</label>
+        <input type="number" name="ec" step="any" placeholder="e.g. 0.35" value="{{ prev.ec|default:'' }}"/>
+        <span class="unit">dS/m</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── Gate 3: Macronutrients ────────────────────────────────── -->
+  <section class="form-section">
+    <h2 class="section-title">
+      <span class="gate-badge">Gate 3</span> Macronutrients
+      <span class="weight-badge">35 pts</span>
+    </h2>
+    <p class="section-hint">Highest soil scoring weight. Use values from your Soil Health Card.</p>
+    <div class="field">
+        <label>Organic Carbon (OC)</label>
+        <input type="number" name="oc" step="any" placeholder="e.g. 0.65" value="{{ prev.oc|default:'' }}"/>
+        <span class="unit">%</span>
+      </div>
+    <div class="field-row">
+      <div class="field">
+        <label>Nitrogen (N)</label>
+        <input type="number" name="n" step="any" placeholder="e.g. 260" value="{{ prev.n|default:'' }}"/>
+        <span class="unit">kg/ha</span>
+      </div>
+      <div class="field">
+        <label>Phosphorus (P₂O₅)</label>
+        <input type="number" name="p" step="any" placeholder="e.g. 18" value="{{ prev.p|default:'' }}"/>
+        <span class="unit">kg/ha</span>
+      </div>
+      <div class="field">
+        <label>Potassium (K)</label>
+        <input type="number" name="k" step="any" placeholder="e.g. 170" value="{{ prev.k|default:'' }}"/>
+        <span class="unit">kg/ha</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Gate 4: Micronutrients ────────────────────────────────── -->
+  <section class="form-section">
+    <h2 class="section-title">
+      <span class="gate-badge">Gate 4</span> Micronutrients
+      <span class="weight-badge">20 pts</span>
+    </h2>
+    <p class="section-hint">Used for fine-grained ranking. All optional.</p>
+    <div class="field">
+        <label>Calcium (Ca)</label>
+        <input type="number" name="ca" step="any" placeholder="e.g. 12" value="{{ prev.ca|default:'' }}"/>
+        <span class="unit">meq/100g</span>
+      </div>
+      <div class="field">
+        <label>Magnesium (Mg)</label>
+        <input type="number" name="mg" step="any" placeholder="e.g. 4" value="{{ prev.mg|default:'' }}"/>
+        <span class="unit">meq/100g</span>
+      </div>
+      <div class="field">
+        <label>Sulphur (S)</label>
+        <input type="number" name="s" step="any" placeholder="e.g. 11" value="{{ prev.s|default:'' }}"/>
+        <span class="unit">ppm</span>
+      </div>
+      <div class="field-row">
+      <div class="field">
+        <label>Iron (Fe)</label>
+        <input type="number" name="fe" step="any" placeholder="e.g. 15" value="{{ prev.fe|default:'' }}"/>
+        <span class="unit">ppm</span>
+      </div>
+      <div class="field">
+        <label>Manganese (Mn)</label>
+        <input type="number" name="mn" step="any" placeholder="e.g. 6" value="{{ prev.mn|default:'' }}"/>
+        <span class="unit">ppm</span>
+      </div>
+      <div class="field">
+        <label>Copper (Cu)</label>
+        <input type="number" name="cu" step="any" placeholder="e.g. 1.1" value="{{ prev.cu|default:'' }}"/>
+        <span class="unit">ppm</span>
+      </div>
+      <div class="field">
+        <label>Zinc (Zn)</label>
+        <input type="number" name="zn" step="any" placeholder="e.g. 0.7" value="{{ prev.zn|default:'' }}"/>
+        <span class="unit">ppm</span>
+      </div>
+      <div class="field">
+        <label>Boron (B)</label>
+        <input type="number" name="b" step="any" placeholder="e.g. 0.4" value="{{ prev.b|default:'' }}"/>
+        <span class="unit">ppm</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Weather note ──────────────────────────────────────────── -->
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">🌾 Get Crop Recommendations</button>
+    <button type="reset" class="btn btn-outline">Clear</button>
+  </div>
+</form>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function switchTab(tab, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.remove('hidden');
+  btn.classList.add('active');
+}
+
+function getGPS() {
+  if (!navigator.geolocation) { alert("Geolocation not supported by your browser."); return; }
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      document.getElementById('latInput').value = pos.coords.latitude.toFixed(6);
+      document.getElementById('lonInput').value = pos.coords.longitude.toFixed(6);
+    },
+    () => alert("Could not get your location. Please enter coordinates manually.")
+  );
+}
+</script>
+{% endblock %}

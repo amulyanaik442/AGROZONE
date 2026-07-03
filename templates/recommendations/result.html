@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+{% block title %}Results — AgroZone{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <h1>Recommendation Results</h1>
+  <div class="location-pill">
+    📍 {{ result.state }} · {{ result.zone }}
+    <span class="confidence confidence-{{ result.confidence }}">{{ result.confidence }}</span>
+  </div>
+</div>
+
+<!-- ── Stats row ─────────────────────────────────────────────────────── -->
+<div class="stats-row">
+  <div class="stat-card">
+    <span class="stat-value">{{ result.crops_evaluated }}</span>
+    <span class="stat-label">Crops evaluated</span>
+  </div>
+  <div class="stat-card stat-green">
+    <span class="stat-value">{{ result.top_crops|length }}</span>
+    <span class="stat-label">Top matches</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-value">pH {{ soil.ph }}</span>
+    <span class="stat-label">Soil pH</span>
+  </div>
+  <div class="stat-card {% if result.weather_available %}stat-green{% endif %}">
+    <span class="stat-value">{% if result.weather_available %}🌦 Live{% else %}—{% endif %}</span>
+    <span class="stat-label">Weather</span>
+  </div>
+</div>
+
+<!-- ── Live weather card ──────────────────────────────────────────────── -->
+{% if result.weather %}
+<div class="weather-card">
+  <div class="weather-header">🌦 Live Weather — {{ result.state }}</div>
+  <div class="weather-grid">
+    <div class="weather-item">
+      <span class="weather-val">{{ result.weather.temp_current }}°C</span>
+      <span class="weather-lbl">Current Temp</span>
+    </div>
+    <div class="weather-item">
+      <span class="weather-val">{{ result.weather.temp_min }}° / {{ result.weather.temp_max }}°C</span>
+      <span class="weather-lbl">Min / Max Today</span>
+    </div>
+    <div class="weather-item">
+      <span class="weather-val">{{ result.weather.humidity }}%</span>
+      <span class="weather-lbl">Humidity</span>
+    </div>
+    <div class="weather-item">
+      <span class="weather-val">{{ result.weather.precipitation }} mm</span>
+      <span class="weather-lbl">Precipitation</span>
+    </div>
+    <div class="weather-item weather-item-full">
+      <span class="weather-val">{{ result.weather.description }}</span>
+      <span class="weather-lbl">Conditions</span>
+    </div>
+  </div>
+</div>
+{% else %}
+<div class="alert alert-warn" style="margin-bottom:1rem">
+  ⚠ Live weather unavailable. Weather scored at neutral 50%. Soil scores are still accurate.
+</div>
+{% endif %}
+
+<!-- ── Crop cards ─────────────────────────────────────────────────────── -->
+{% if result.top_crops %}
+<div class="crop-grid">
+  {% for crop in result.top_crops %}
+
+  <div class="crop-card2 cat-{{ crop.category|slugify }}">
+
+    <!-- Rank ribbon -->
+    <div class="rank-ribbon">
+      <span class="rank-num">#{{ crop.rank }}</span>
+    </div>
+
+    <!-- Left: info -->
+    <div class="crop-body">
+      <div class="crop-top-row">
+        <h3 class="crop-name2">
+          {{ crop.crop_name }}
+          {% if crop.is_notable %}<span class="notable-badge">⭐ Notable</span>{% endif %}
+        </h3>
+      </div>
+
+      <div class="crop-chips">
+        <span class="chip2 chip-cat">{{ crop.category }}</span>
+        <span class="chip2 chip-zone2">🗺 {{ crop.zone_name }}</span>
+      </div>
+
+      <!-- Temperature band -->
+      {% if crop.temp_range %}
+      <div class="temp-band">
+        <span class="temp-icon">🌡</span>
+        <div class="temp-bar-wrap">
+          <div class="temp-label-row">
+            <span class="temp-label">Ideal: {{ crop.temp_range }}</span>
+            {% if result.weather and result.weather.temp_current %}
+            <span class="temp-now {% if crop.weather_score.status == 'ok' %}temp-ok{% elif crop.weather_score.status == 'missing' %}temp-mid{% else %}temp-bad{% endif %}">
+              Now: {{ result.weather.temp_current }}°C
+            </span>
+            {% endif %}
+          </div>
+          {% if crop.weather_score %}
+          <div class="temp-bar-track">
+            <div class="temp-bar-fill temp-fill-{{ crop.weather_score.status }}"
+                 style="width:{{ crop.weather_score.pct }}%"></div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if crop.notes %}<p class="crop-notes2">{{ crop.notes }}</p>{% endif %}
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+
+{% else %}
+<div class="alert alert-warn">
+  <strong>No crops found for this state.</strong>
+  Run <code>python manage.py load_crops</code> and try again.
+</div>
+{% endif %}
+
+<div class="result-actions">
+  <a href="/recommend/" class="btn btn-primary">← Try Another</a>
+</div>
+<div class="confidence-note">ℹ {{ result.confidence_note }}</div>
+{% endblock %}
