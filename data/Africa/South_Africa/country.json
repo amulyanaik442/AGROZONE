@@ -1,0 +1,9 @@
+{
+  "name": "South Africa",
+  "code": "ZA",
+  "continent": "Africa",
+  "centroid_lat": -30.5595,
+  "centroid_lon": 22.9375,
+  "admin_hierarchy": ["Province", "District", "Municipality"],
+  "crop_excel_files": []
+}

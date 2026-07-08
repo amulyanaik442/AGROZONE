@@ -4,23 +4,52 @@ Crop Models
 Each Crop row mirrors one Excel row:
   Category | Crop Name | Notes | Zone | OC | N | P2O5 | K | S | Fe | Mn | Cu | Zn | B | pH | EC | Ca | Mg | Temp
 
-Soil parameter ranges are stored as lo/hi float pairs, parsed from
-strings like "5.5-7.5" by the loader command.
+Supports multi-continent: India crops reference State; global crops
+reference Country + optional AdminDivision. Both paths converge to the
+same rule engine.
+
+Backward-compatible: all new fields are nullable. India data untouched.
 """
 from django.db import models
-from apps.location.models import State, AgroclimateZone
+from apps.location.models import State, AgroclimateZone, Continent, Country, AdminDivision
 
 
 class Crop(models.Model):
-    """A single crop entry for a specific state × agroclimatic zone."""
+    """
+    A single crop entry for a specific location x agroclimatic zone.
 
-    # ── Identity ──────────────────────────────────────────────────────────
-    state = models.ForeignKey(State, on_delete=models.CASCADE, related_name="crops")
-    zone = models.ForeignKey(AgroclimateZone, on_delete=models.SET_NULL, null=True, blank=True)
+    For India: state + zone are used (backward-compatible).
+    For global: continent + country + admin_division are used.
+    """
+    # ── Global identity (new) ─────────────────────────────────────────────
+    continent = models.ForeignKey(
+        Continent, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name="crops"
+    )
+    country = models.ForeignKey(
+        Country, on_delete=models.CASCADE, null=True, blank=True,
+        related_name="crops"
+    )
+    admin_division = models.ForeignKey(
+        AdminDivision, on_delete=models.SET_NULL, null=True, blank=True,
+        related_name="crops",
+        help_text="Administrative division (state/province/region) for non-India crops."
+    )
+
+    # ── India-specific identity (backward-compatible) ────────────────────
+    state = models.ForeignKey(
+        State, on_delete=models.CASCADE, null=True, blank=True,
+        related_name="crops"
+    )
+    zone = models.ForeignKey(
+        AgroclimateZone, on_delete=models.SET_NULL, null=True, blank=True
+    )
+
+    # ── Core identity ─────────────────────────────────────────────────────
     category = models.CharField(max_length=60)          # e.g. "Cereals & Millets"
     crop_name = models.CharField(max_length=120)
     notes = models.TextField(blank=True, default="")    # Notes/Significance column
-    is_notable = models.BooleanField(default=False)     # True if mentioned in ★ state facts
+    is_notable = models.BooleanField(default=False)     # True if mentioned in notable facts
     temp_range = models.CharField(max_length=30, blank=True, default="")  # e.g. "20-35°C"
     sheet_order = models.PositiveIntegerField(default=0)  # row position in Excel — used as tie-breaker
 
@@ -66,7 +95,16 @@ class Crop(models.Model):
             models.Index(fields=["state"]),
             models.Index(fields=["zone"]),
             models.Index(fields=["category"]),
+            models.Index(fields=["country"]),
+            models.Index(fields=["continent"]),
+            models.Index(fields=["admin_division"]),
         ]
 
     def __str__(self):
-        return f"{self.crop_name} ({self.state.name})"
+        if self.state:
+            return f"{self.crop_name} ({self.state.name})"
+        if self.admin_division:
+            return f"{self.crop_name} ({self.admin_division.name}, {self.country.name})"
+        if self.country:
+            return f"{self.crop_name} ({self.country.name})"
+        return self.crop_name

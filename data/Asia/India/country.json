@@ -1,0 +1,9 @@
+{
+  "name": "India",
+  "code": "IN",
+  "continent": "Asia",
+  "centroid_lat": 20.5937,
+  "centroid_lon": 78.9629,
+  "admin_hierarchy": ["State", "District", "Taluk"],
+  "crop_excel_files": ["India_State_Wise_Crops_Final.xlsx"]
+}

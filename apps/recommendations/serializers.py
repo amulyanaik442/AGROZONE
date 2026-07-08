@@ -68,6 +68,8 @@ class CropResultSerializer(serializers.Serializer):
 class RecommendationResponseSerializer(serializers.Serializer):
     state             = serializers.CharField()
     zone              = serializers.CharField()
+    continent         = serializers.CharField(required=False, allow_blank=True)
+    country           = serializers.CharField(required=False, allow_blank=True)
     distance_km       = serializers.FloatField()
     confidence        = serializers.CharField()
     confidence_note   = serializers.CharField()

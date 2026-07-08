@@ -14,7 +14,7 @@ from django.shortcuts import render
 
 from .serializers import SoilInputSerializer, RecommendationResponseSerializer
 from .services import get_recommendations
-from apps.location.models import State
+from apps.location.models import Continent, Country, State
 
 
 # ── REST API ──────────────────────────────────────────────────────────────────
@@ -44,7 +44,13 @@ class RecommendView(views.APIView):
 def recommend_form(request):
     """GET /recommend/ — render the soil input form."""
     states = State.objects.values_list("name", flat=True).order_by("name")
-    return render(request, "recommendations/form.html", {"states": list(states)})
+    continents = Continent.objects.values_list("name", flat=True).order_by("name")
+    countries = Country.objects.values_list("name", flat=True).order_by("name")
+    return render(request, "recommendations/form.html", {
+        "states": list(states),
+        "continents": list(continents),
+        "countries": list(countries),
+    })
 
 
 def recommend_result(request):
@@ -53,6 +59,8 @@ def recommend_result(request):
         return recommend_form(request)
 
     states = State.objects.values_list("name", flat=True).order_by("name")
+    continents = Continent.objects.values_list("name", flat=True).order_by("name")
+    countries = Country.objects.values_list("name", flat=True).order_by("name")
 
     # Parse form data into the same structure as the API serializer
     def _float(key):
@@ -77,6 +85,8 @@ def recommend_result(request):
     if not ser.is_valid():
         return render(request, "recommendations/form.html", {
             "states": list(states),
+            "continents": list(continents),
+            "countries": list(countries),
             "errors": ser.errors,
             "prev": request.POST,
         })
@@ -86,6 +96,8 @@ def recommend_result(request):
     except ValueError as e:
         return render(request, "recommendations/form.html", {
             "states": list(states),
+            "continents": list(continents),
+            "countries": list(countries),
             "errors": {"location": [str(e)]},
             "prev": request.POST,
         })
@@ -94,4 +106,6 @@ def recommend_result(request):
         "result": result,
         "soil": ser.validated_data,
         "states": list(states),
+        "continents": list(continents),
+        "countries": list(countries),
     })

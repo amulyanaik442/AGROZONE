@@ -95,3 +95,9 @@ CORS_ALLOW_ALL_ORIGINS = True  # Restrict to specific origins in production
 
 # Absolute path to the Excel dataset loaded by the management command
 CROPS_EXCEL_PATH = BASE_DIR / "data" / "India_State_Wise_Crops_Final.xlsx"
+
+# Global data root — used by the multi-continent dataset loader
+DATA_ROOT = BASE_DIR / "data"
+
+# Continent registry config path
+CONTINENT_REGISTRY_PATH = DATA_ROOT / "continent_registry.json"

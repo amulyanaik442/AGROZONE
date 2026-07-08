@@ -5,20 +5,21 @@ from .models import Crop
 @admin.register(Crop)
 class CropAdmin(admin.ModelAdmin):
     list_display = [
-        "crop_name", "category", "state", "zone",
+        "crop_name", "category", "country", "state", "admin_division", "zone",
         "ph_lo", "ph_hi", "is_notable", "sheet_order",
     ]
-    list_filter = ["state", "zone", "category", "is_notable"]
-    search_fields = ["crop_name", "notes", "state__name"]
+    list_filter = ["country", "state", "zone", "category", "is_notable", "continent"]
+    search_fields = ["crop_name", "notes", "state__name", "country__name"]
     readonly_fields = ["sheet_order"]
     ordering = ["state__name", "sheet_order"]
 
     fieldsets = (
         ("Identity", {
-            "fields": ("state", "zone", "category", "crop_name", "notes",
+            "fields": ("continent", "country", "admin_division",
+                       "state", "zone", "category", "crop_name", "notes",
                        "is_notable", "temp_range", "sheet_order"),
         }),
-        ("Gate 2 — pH (Hard Filter)", {
+        ("Gate 2 — pH", {
             "fields": (("ph_lo", "ph_hi"),),
         }),
         ("Gate 3 — Soil Health (15 pts)", {

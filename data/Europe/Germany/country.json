@@ -1,0 +1,9 @@
+{
+  "name": "Germany",
+  "code": "DE",
+  "continent": "Europe",
+  "centroid_lat": 51.1657,
+  "centroid_lon": 10.4515,
+  "admin_hierarchy": ["State", "District"],
+  "crop_excel_files": []
+}

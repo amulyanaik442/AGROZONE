@@ -1,0 +1,21 @@
+{
+  "discovery_mode": "filesystem",
+  "continents": {
+    "AS": {
+      "name": "Asia",
+      "path": "data/Asia"
+    },
+    "AF": {
+      "name": "Africa",
+      "path": "data/Africa"
+    },
+    "EU": {
+      "name": "Europe",
+      "path": "data/Europe"
+    },
+    "AM": {
+      "name": "America",
+      "path": "data/America"
+    }
+  }
+}

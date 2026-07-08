@@ -1,0 +1,9 @@
+{
+  "name": "France",
+  "code": "FR",
+  "continent": "Europe",
+  "centroid_lat": 46.6034,
+  "centroid_lon": 1.8883,
+  "admin_hierarchy": ["Region", "Department"],
+  "crop_excel_files": []
+}

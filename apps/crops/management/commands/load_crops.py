@@ -3,9 +3,14 @@ Management command: load_crops
 Usage: python manage.py load_crops
 
 Reads data/India_State_Wise_Crops_Final.xlsx and populates:
+  - location_continent (Asia)
+  - location_country (India)
   - location_state
   - location_agroclimateezone
   - crops_crop
+
+Backward-compatible: now also populates continent/country fields
+for global engine support. India data is unchanged structurally.
 
 Safe to re-run — clears existing data first (--no-clear to skip).
 """
@@ -13,7 +18,7 @@ import re
 from openpyxl import load_workbook
 from django.core.management.base import BaseCommand, CommandError
 from django.conf import settings
-from apps.location.models import State, AgroclimateZone
+from apps.location.models import Continent, Country, State, AgroclimateZone
 from apps.crops.models import Crop
 
 
@@ -87,10 +92,25 @@ class Command(BaseCommand):
             raise CommandError(f"Excel file not found: {path}")
 
         if not options["no_clear"]:
-            self.stdout.write("Clearing existing crop data…")
-            Crop.objects.all().delete()
+            self.stdout.write("Clearing existing India crop data…")
+            Crop.objects.filter(state__isnull=False).delete()
             AgroclimateZone.objects.all().delete()
             State.objects.all().delete()
+            # Don't delete Continent/Country — they may be used by other datasets
+
+        # Ensure Asia continent and India country exist
+        asia, _ = Continent.objects.get_or_create(
+            code="AS", defaults={"name": "Asia"}
+        )
+        india_country, _ = Country.objects.get_or_create(
+            code="IN",
+            defaults={
+                "name": "India",
+                "continent": asia,
+                "centroid_lat": 20.5937,
+                "centroid_lon": 78.9629,
+            },
+        )
 
         wb = load_workbook(path, read_only=True, data_only=True)
         state_sheets = [s for s in wb.sheetnames if s not in SKIP_SHEETS]
@@ -136,6 +156,7 @@ class Command(BaseCommand):
                     "centroid_lat": centroid[0],
                     "centroid_lon": centroid[1],
                     "notable_facts": "\n".join(notable_facts),
+                    "country": india_country,
                 },
             )
 
@@ -183,6 +204,7 @@ class Command(BaseCommand):
                 temp           = str(row[18]).strip() if len(row) > 18 and row[18] else ""
 
                 crop_objects.append(Crop(
+                    continent=asia, country=india_country,
                     state=state, zone=zone_obj, category=cat,
                     crop_name=crop_name, notes=notes,
                     is_notable=is_notable, temp_range=temp,
@@ -203,5 +225,5 @@ class Command(BaseCommand):
             self.stdout.write(f"  {sheet_name}: {len(crop_objects)} crops loaded.")
 
         self.stdout.write(self.style.SUCCESS(
-            f"\n✅  Done. {total_crops} crops across {len(state_sheets)} states."
+            f"\nDone. {total_crops} crops across {len(state_sheets)} states."
         ))

@@ -1,0 +1,9 @@
+{
+  "name": "Nigeria",
+  "code": "NG",
+  "continent": "Africa",
+  "centroid_lat": 9.0820,
+  "centroid_lon": 8.6753,
+  "admin_hierarchy": ["State", "Local Government Area"],
+  "crop_excel_files": []
+}

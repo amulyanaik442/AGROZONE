@@ -29,12 +29,12 @@
     </h2>
     <p class="section-hint">
       GPS coordinates give the most accurate results — live weather is fetched automatically.
-      Or select your state manually.
+      Or select your continent/country/state manually.
     </p>
 
     <div class="location-tabs">
       <button type="button" class="tab-btn active" onclick="switchTab('gps', this)">📍 GPS Coordinates</button>
-      <button type="button" class="tab-btn" onclick="switchTab('state', this)">🗺 Select State</button>
+      <button type="button" class="tab-btn" onclick="switchTab('manual', this)">🗺 Select Location</button>
     </div>
 
     <div id="tab-gps" class="tab-panel">
@@ -54,20 +54,43 @@
           <button type="button" class="btn btn-outline" onclick="getGPS()">📍 Use My Location</button>
         </div>
       </div>
+      <p class="section-hint" style="margin-top:.5rem">
+        ℹ Coordinates outside India use the global engine automatically.
+      </p>
     </div>
 
-    <div id="tab-state" class="tab-panel hidden">
-      <div class="field" style="max-width:320px">
-        <label>State</label>
-        <select name="state_name">
-          <option value="">— select state —</option>
-          {% for s in states %}
-          <option value="{{ s }}" {% if prev.state_name == s %}selected{% endif %}>{{ s }}</option>
-          {% endfor %}
-        </select>
+    <div id="tab-manual" class="tab-panel hidden">
+      <div class="field-row">
+        <div class="field">
+          <label>Continent</label>
+          <select name="continent_name" id="continentSelect" onchange="onContinentChange()">
+            <option value="">— select continent —</option>
+            {% for c in continents %}
+            <option value="{{ c }}" {% if prev.continent_name == c %}selected{% endif %}>{{ c }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label>Country</label>
+          <select name="country_name" id="countrySelect">
+            <option value="">— select country —</option>
+            {% for c in countries %}
+            <option value="{{ c }}" {% if prev.country_name == c %}selected{% endif %}>{{ c }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field" id="stateField">
+          <label>State (India only)</label>
+          <select name="state_name">
+            <option value="">— select state —</option>
+            {% for s in states %}
+            <option value="{{ s }}" {% if prev.state_name == s %}selected{% endif %}>{{ s }}</option>
+            {% endfor %}
+          </select>
+        </div>
       </div>
       <p class="section-hint" style="margin-top:.5rem">
-        ℹ Weather will be fetched from the state's centroid coordinates.
+        ℹ Weather will be fetched from the country's centroid coordinates.
       </p>
     </div>
   </section>
@@ -207,5 +230,15 @@ function getGPS() {
     () => alert("Could not get your location. Please enter coordinates manually.")
   );
 }
+
+function onContinentChange() {
+  var sel = document.getElementById('continentSelect');
+  var stateField = document.getElementById('stateField');
+  stateField.style.display = (sel.value === 'Asia') ? '' : 'none';
+}
+document.addEventListener('DOMContentLoaded', function() {
+  var sel = document.getElementById('continentSelect');
+  if (sel) { onContinentChange(); }
+});
 </script>
 {% endblock %}
