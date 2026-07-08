@@ -15,6 +15,7 @@ from django.shortcuts import render
 from .serializers import SoilInputSerializer, RecommendationResponseSerializer
 from .services import get_recommendations
 from apps.location.models import Continent, Country, State
+from apps.engine.crop_feature_engine import enrich_crop_recommendations
 
 
 # ── REST API ──────────────────────────────────────────────────────────────────
@@ -34,6 +35,12 @@ class RecommendView(views.APIView):
             result = get_recommendations(ser.validated_data)
         except ValueError as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+        # Enrich recommendations with additional crop feature info
+        country_name = result.get("country")
+        result["top_crops"] = enrich_crop_recommendations(
+            result["top_crops"], country_name
+        )
 
         out = RecommendationResponseSerializer(result)
         return Response(out.data, status=status.HTTP_200_OK)
@@ -103,6 +110,12 @@ def recommend_result(request):
             "errors": {"location": [str(e)]},
             "prev": request.POST,
         })
+
+    # Enrich recommendations with additional crop feature info
+    country_name = result.get("country")
+    result["top_crops"] = enrich_crop_recommendations(
+        result["top_crops"], country_name
+    )
 
     return render(request, "recommendations/result.html", {
         "result": result,
