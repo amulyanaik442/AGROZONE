@@ -169,6 +169,11 @@ body {
 .field-auto { flex: 0 0 auto; }
 .field label { font-size: .82rem; font-weight: 600; color: var(--text-muted); }
 .required { color: var(--red-soft); }
+/* Hide number input spinners globally */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; }
+
 .field input, .field select {
   border: 1px solid var(--border);
   border-radius: 6px;

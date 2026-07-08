@@ -40,6 +40,8 @@ def get_recommendations(validated_data: dict) -> dict:
     lat        = validated_data.get("lat")
     lon        = validated_data.get("lon")
     state_name = validated_data.get("state_name")
+    continent_name_in = validated_data.get("continent_name")
+    country_name_in = validated_data.get("country_name")
 
     # ── Step 1: Resolve location ──────────────────────────────────────────
     is_india = False
@@ -85,8 +87,21 @@ def get_recommendations(validated_data: dict) -> dict:
         zone_name      = (Crop.objects.filter(state=state).values_list("zone__name", flat=True).distinct().first()) or "Unknown"
         country_name   = "India"
         continent_name = "Asia"
+    elif continent_name_in and country_name_in:
+        # Manual continent/country selection (global)
+        try:
+            country = Country.objects.get(name__iexact=country_name_in.strip())
+        except Country.DoesNotExist:
+            raise ValueError(f"Country '{country_name_in}' not found in database.")
+        lat, lon       = country.centroid_lat, country.centroid_lon
+        distance_km    = 0.0
+        confidence     = "manual"
+        confidence_note = f"Country selected manually — weather fetched from {country.name} centroid."
+        zone_name      = country.name
+        country_name   = country.name
+        continent_name = country.continent.name if country.continent else "Unknown"
     else:
-        raise ValueError("Provide either lat+lon OR state_name.")
+        raise ValueError("Provide lat+lon, state_name, or continent_name+country_name for location.")
 
     # ── Step 2: Fetch live weather (non-blocking, graceful fallback) ──────
     weather = fetch_weather(lat, lon)

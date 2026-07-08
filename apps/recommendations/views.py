@@ -74,6 +74,8 @@ def recommend_result(request):
         "lat": _float("lat"),
         "lon": _float("lon"),
         "state_name": request.POST.get("state_name", "").strip() or None,
+        "continent_name": request.POST.get("continent_name", "").strip() or None,
+        "country_name": request.POST.get("country_name", "").strip() or None,
         "ph": _float("ph"),
         "oc": _float("oc"), "ec": _float("ec"),
         "n": _float("n"), "p": _float("p"), "k": _float("k"), "s": _float("s"),

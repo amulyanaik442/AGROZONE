@@ -6,10 +6,12 @@ class SoilInputSerializer(serializers.Serializer):
     Validates the full soil input payload.
     ph is required (Gate 2 hard filter). All others are optional.
     """
-    # Location — one of lat/lon OR state_name required
+    # Location — one of lat+lon, state_name, or continent_name+country_name
     lat = serializers.FloatField(required=False, allow_null=True)
     lon = serializers.FloatField(required=False, allow_null=True)
     state_name = serializers.CharField(required=False, allow_blank=True, allow_null=True)
+    continent_name = serializers.CharField(required=False, allow_blank=True, allow_null=True)
+    country_name = serializers.CharField(required=False, allow_blank=True, allow_null=True)
 
     # Gate 2 — required
     ph = serializers.FloatField(min_value=0.0, max_value=14.0)
@@ -36,9 +38,10 @@ class SoilInputSerializer(serializers.Serializer):
     def validate(self, data):
         has_latlon = data.get("lat") is not None and data.get("lon") is not None
         has_state = bool(data.get("state_name"))
-        if not has_latlon and not has_state:
+        has_cont_country = bool(data.get("continent_name")) and bool(data.get("country_name"))
+        if not has_latlon and not has_state and not has_cont_country:
             raise serializers.ValidationError(
-                "Provide either lat+lon OR state_name for location."
+                "Provide lat+lon, state_name, or continent_name+country_name for location."
             )
         return data
 
