@@ -133,7 +133,7 @@ def score_crop(crop, soil: SoilInput, weather: Optional[dict] = None) -> CropSco
     result = CropScore(
         crop_id=crop.id, crop_name=crop.crop_name, category=crop.category,
         zone_name=crop.zone.name if crop.zone else "",
-        state_name=crop.state.name, notes=crop.notes,
+        state_name=crop.state.name if crop.state else (crop.country.name if crop.country else ""), notes=crop.notes,
         is_notable=crop.is_notable, temp_range=crop.temp_range,
     )
 
