@@ -1,0 +1,11 @@
+{
+  "name": "Netherlands",
+  "code": "NL",
+  "continent": "Europe",
+  "centroid_lat": 52.1326,
+  "centroid_lon": 5.2913,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

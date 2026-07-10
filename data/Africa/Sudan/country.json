@@ -1,0 +1,11 @@
+{
+  "name": "Sudan",
+  "code": "SD",
+  "continent": "Africa",
+  "centroid_lat": 12.8628,
+  "centroid_lon": 30.2176,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

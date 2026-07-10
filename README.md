@@ -1,8 +1,20 @@
-# AgroZone — Multi-Continent Crop Recommendation Engine
+# AgroZone — Multi-Continent Crop Recommendation + Crop Planning Engine
 
-**Rule-based deterministic crop recommendation system** built with Django. Takes soil health values + GPS coordinates → returns the **top 5 best-suited crops** with a full score breakdown.
+**Rule-based deterministic crop recommendation system** built with Django. Takes soil health values + GPS coordinates → returns the **top 5 best-suited crops** with full score breakdown and **crop planning guides** (duration, sowing season, water requirement, pests, fertilizers, harvest time).
 
-Supports **40 countries across 4 continents** (Asia, Africa, Europe, America) with a **configuration-driven architecture** — new countries can be added via JSON config files, no engine code changes needed.
+Supports **187 countries across 6 continents** (Asia, Africa, Europe, North America, South America, Oceania) with a **configuration-driven architecture** — new countries can be added via JSON config files, no engine code changes needed.
+
+---
+
+## Features
+
+- **Crop Recommendation** — 5-gate scoring system (pH, soil health, macronutrients, micronutrients, weather)
+- **Crop Planning** — Instant crop guide with duration, sowing season, water needs, pest info, fertilizers, and harvest time
+- **Live Weather** — Real-time temperature data from Open-Meteo API
+- **Multi-Continent** — Works for 187 countries across 6 continents
+- **India Backward-Compatible** — Full support for 29 Indian states with agroclimatic zones
+- **Category Diversity** — Top 5 results guaranteed to come from different crop categories
+- **Explainable Scores** — Every point is traceable gate-by-gate
 
 ---
 
@@ -36,16 +48,52 @@ Farmer submits soil values + coordinates
  SORT: score DESC → is_notable DESC → sheet_order ASC
          │
          ▼
- RETURN: Top 5 crops with scores, deficiencies, weather context
+ TOP 5 CROPS → Crop Planning Enrichment
+         │
+         ▼
+ RETURN: Top 5 crops with scores, deficiencies, weather context,
+         and crop planning guides (duration, season, water, pests, etc.)
 ```
 
-### Scoring (per parameter)
-| Condition | Score multiplier |
-|-----------|-----------------|
-| Value inside `[lo, hi]` | 1.0 (full) |
-| Value outside range | `max(0, 1 - distance/width)` |
-| Missing value | 0.75 (neutral) |
-| pH out of range | 0.75 (soft — no hard elimination) |
+---
+
+## Crop Planning Engine
+
+After generating recommendations, the system enriches each crop with planning data from `World_Country_Wise_Crop_Database_UPDATED.xlsx`.
+
+### How It Works
+
+```
+Top 5 recommended crops
+         │
+         ▼
+ Crop Data Mapper (singleton, lazy-loads Excel)
+         │
+         ├─ Normalize crop name (remove parentheticals, lowercase)
+         ├─ Map Indian local names → English equivalents
+         │   (e.g., Ragi → Finger Millet, Jowar → Sorghum)
+         ├─ Lookup by (country, crop_name) with cascading fallbacks
+         │
+         ▼
+ Attach additional_info to each crop:
+   • Crop Duration
+   • Best Sowing Season
+   • Water Requirement
+   • Common Pests
+   • Recommended Fertilizers
+   • Harvest Time
+```
+
+### Crop Planning Data Flow
+
+| Step | Description |
+|------|-------------|
+| 1 | User submits form → recommendation engine returns top 5 crops |
+| 2 | `enrich_crop_recommendations()` called with crop list + country name |
+| 3 | `CropDataMapper` looks up each crop in the master Excel database |
+| 4 | Indian local names (Ragi, Jowar, Bajra) mapped to English equivalents |
+| 5 | Planning data attached as `additional_info` dict to each crop |
+| 6 | Result page renders expandable "Crop Guide" section for each crop |
 
 ---
 
@@ -57,10 +105,14 @@ agrozone/
 ├── requirements.txt
 ├── data/                              ← Crop datasets (per continent/country)
 │   ├── continent_registry.json        ← Filesystem discovery config
-│   ├── Asia/India/
-│   ├── Africa/{Nigeria,Kenya,...}/
-│   ├── Europe/{France,Germany,...}/
-│   └── America/{US,Brazil,...}/
+│   ├── India_State_Wise_Crops_Final.xlsx  ← India state-wise dataset
+│   ├── World_Country_Wise_Crop_Database_UPDATED.xlsx  ← Master crop planning database
+│   ├── Asia/{India,China,Japan,...}/
+│   ├── Africa/{Nigeria,Kenya,South_Africa,...}/
+│   ├── Europe/{France,Germany,UK,...}/
+│   ├── North America/{US,Canada,Mexico,...}/
+│   ├── South America/{Brazil,Argentina,Chile,...}/
+│   └── Oceania/{Australia,New_Zealand,Fiji,...}/
 ├── core/                              ← Django project config
 │   ├── settings.py
 │   └── urls.py
@@ -79,10 +131,13 @@ agrozone/
 │   │   │   ├── load_crops.py          ← India dataset loader (backward-compatible)
 │   │   │   └── load_global_crops.py   ← Generic multi-continent loader
 │   │   └── admin.py
-│   ├── engine/                        ← Scoring engine (pure Python, no Django)
+│   ├── engine/                        ← Scoring engine + crop planning
 │   │   ├── rule_engine.py             ← 5-gate scoring — unchanged
 │   │   ├── weather_service.py         ← Open-Meteo API client — unchanged
-│   │   └── tests_global.py            ← 9 global scoring + India regression tests
+│   │   ├── crop_feature_engine.py     ← Entry point for crop planning enrichment
+│   │   ├── crop_feature_service.py    ← Service layer for enrichment
+│   │   ├── crop_data_mapper.py        ← Excel loader + lookup logic
+│   │   └── crop_utils.py              ← Name normalization + Indian-to-English mapping
 │   └── recommendations/               ← Orchestration layer
 │       ├── services.py                ← India + global pipeline branching
 │       ├── views.py                   ← REST API + HTML form views
@@ -90,7 +145,9 @@ agrozone/
 ├── templates/                         ← HTML (Django templates)
 │   ├── base.html
 │   └── recommendations/{form,result}.html
-└── static/css/main.css
+└── static/
+    ├── css/main.css
+    └── js/main.js
 ```
 
 ---
@@ -98,8 +155,8 @@ agrozone/
 ## Quick Start
 
 ```bash
-git clone https://github.com/madhavihanchate/agrozone.git
-cd agrozone
+git clone https://github.com/amulyanaik442/AGROZONE.git
+cd AGROZONE
 python -m venv venv
 venv\Scripts\Activate      # Windows
 # source venv/bin/activate  # Mac/Linux
@@ -107,7 +164,7 @@ venv\Scripts\Activate      # Windows
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py load_crops            # India: 1,856 crops across 29 states
-python manage.py load_global_crops     # Global: 1,614 crops across 38 countries
+python manage.py load_global_crops     # Global: 10,376 crops across 186 countries
 python manage.py runserver
 ```
 
@@ -121,12 +178,12 @@ Open http://127.0.0.1:8000/recommend/
 | URL | Description |
 |-----|-------------|
 | `/recommend/` | Soil input form |
-| `/recommend/result/` | Top-5 results page |
+| `/recommend/result/` | Top-5 results with crop planning guides |
 
 ### REST API
 | Method | URL | Description |
 |--------|-----|-------------|
-| POST | `/api/v1/recommend/` | Get top 5 crops |
+| POST | `/api/v1/recommend/` | Get top 5 crops with planning data |
 | GET | `/api/v1/location/states/` | List Indian states |
 | GET | `/api/v1/location/zones/` | List agroclimatic zones |
 | POST | `/api/v1/location/geocode/` | Resolve lat/lon → Indian state |
@@ -169,7 +226,7 @@ curl -X POST http://127.0.0.1:8000/api/v1/location/global-geocode/ \
 | Command | What it loads | Safe to re-run? |
 |---------|---------------|-----------------|
 | `python manage.py load_crops` | India (1,856 crops, 29 states) | Yes — clears only India data |
-| `python manage.py load_global_crops` | All global countries | Yes — `--no-clear` by default |
+| `python manage.py load_global_crops` | All 186 global countries | Yes — `--no-clear` by default |
 | `python manage.py load_global_crops --country Nigeria` | Single country | Yes |
 | `python manage.py load_global_crops --continent AF` | All African countries | Yes |
 
@@ -188,31 +245,30 @@ See `MIGRATION_GUIDE.md` for detailed instructions.
 
 ---
 
+## Current Dataset
+
+| Continent | Countries + States | Crops |
+|-----------|-------------------|-------|
+| Asia | 47 countries | 3,048 |
+| Africa | 56 countries | 3,691 |
+| Europe | 43 countries | 2,586 |
+| North America | 17 countries | 1,230 |
+| South America | 12 countries | 767 |
+| Oceania | 14 countries | 910 |
+| India (state-wise) | 29 states | 1,856 |
+| **Total** | **189 regions** | **12,232** |
+
+---
+
 ## Design Decisions
 
 | Decision | Rationale |
 |----------|-----------|
-| **No engine changes** | `rule_engine.py` was already country-agnostic — takes any list of crops |
+| **Rule-based scoring** | Explainable, deterministic, zero training data needed |
 | **Backward-compatible India** | India pipeline, API format, and data loader untouched |
 | **Config-driven geography** | New countries added via JSON + anchor tuples, not Python |
 | **Optional weather** | Open-Meteo has no API key; graceful 50% neutral score on failure |
 | **Soft pH scoring** | pH out-of-range scores 0.75 instead of elimination (better UX) |
-| **Admin division → sheet name** | Each Excel sheet = one admin division (State/Province/Region) |
-
----
-
-## Current Dataset
-
-| Continent | Countries | Crops |
-|-----------|-----------|-------|
-| Asia | India (29 states) | 1,856 |
-| Africa | 13 countries | 528 |
-| Europe | 13 countries | 758 |
-| America | 13 countries | 328 |
-| **Total** | **40** | **3,470** |
-
----
-
-## Pre-Existing Test Notes
-
-6 tests in `apps.engine.tests` fail due to earlier engine updates (pH soft scoring, missing param 0.5→0.75). These are **not** regressions from the multi-continent extension. The corrected expectations are verified in `apps.engine.tests_global`.
+| **Crop planning enrichment** | Separate from recommendation engine; graceful fallback for missing data |
+| **Indian-to-English mapping** | Handles local crop names (Ragi, Jowar, Bajra) for global database lookup |
+| **Category diversity** | Top 5 results from different categories prevent monoculture bias |

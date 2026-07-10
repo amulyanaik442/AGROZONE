@@ -1,0 +1,11 @@
+{
+  "name": "Albania",
+  "code": "AL",
+  "continent": "Europe",
+  "centroid_lat": 41.1533,
+  "centroid_lon": 20.1683,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

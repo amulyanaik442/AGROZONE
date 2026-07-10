@@ -1,0 +1,11 @@
+{
+  "name": "Iraq",
+  "code": "IQ",
+  "continent": "Asia",
+  "centroid_lat": 33.2232,
+  "centroid_lon": 43.6793,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Ecuador",
+  "code": "EC",
+  "continent": "South America",
+  "centroid_lat": -1.8312,
+  "centroid_lon": -78.1834,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

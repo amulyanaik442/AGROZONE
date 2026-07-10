@@ -1,0 +1,11 @@
+{
+  "name": "Eritrea",
+  "code": "ER",
+  "continent": "Africa",
+  "centroid_lat": 15.1794,
+  "centroid_lon": 39.7823,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

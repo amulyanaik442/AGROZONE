@@ -1,0 +1,11 @@
+{
+  "name": "Tunisia",
+  "code": "TN",
+  "continent": "Africa",
+  "centroid_lat": 33.8869,
+  "centroid_lon": 9.5375,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

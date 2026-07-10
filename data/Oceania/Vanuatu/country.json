@@ -1,0 +1,11 @@
+{
+  "name": "Vanuatu",
+  "code": "VU",
+  "continent": "Oceania",
+  "centroid_lat": -15.3767,
+  "centroid_lon": 166.9592,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

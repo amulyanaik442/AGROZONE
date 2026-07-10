@@ -1,0 +1,11 @@
+{
+  "name": "Paraguay",
+  "code": "PY",
+  "continent": "South America",
+  "centroid_lat": -23.4425,
+  "centroid_lon": -58.4438,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

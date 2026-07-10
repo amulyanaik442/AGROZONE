@@ -1,0 +1,11 @@
+{
+  "name": "Timor-Leste",
+  "code": "TL",
+  "continent": "Asia",
+  "centroid_lat": -8.8742,
+  "centroid_lon": 125.7275,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

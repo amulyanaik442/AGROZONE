@@ -1,0 +1,11 @@
+{
+  "name": "Vietnam",
+  "code": "VN",
+  "continent": "Asia",
+  "centroid_lat": 14.0583,
+  "centroid_lon": 108.2772,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

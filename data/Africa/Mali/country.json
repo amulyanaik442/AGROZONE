@@ -1,0 +1,11 @@
+{
+  "name": "Mali",
+  "code": "ML",
+  "continent": "Africa",
+  "centroid_lat": 17.5707,
+  "centroid_lon": -3.9962,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

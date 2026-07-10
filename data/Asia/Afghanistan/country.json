@@ -1,0 +1,11 @@
+{
+  "name": "Afghanistan",
+  "code": "AF",
+  "continent": "Asia",
+  "centroid_lat": 33.93911,
+  "centroid_lon": 67.70995,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Peru",
+  "code": "PE",
+  "continent": "South America",
+  "centroid_lat": -9.19,
+  "centroid_lon": -75.0152,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Kiribati",
+  "code": "KI",
+  "continent": "Oceania",
+  "centroid_lat": -3.3704,
+  "centroid_lon": -168.734,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

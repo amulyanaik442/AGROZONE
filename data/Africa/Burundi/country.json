@@ -1,0 +1,11 @@
+{
+  "name": "Burundi",
+  "code": "BI",
+  "continent": "Africa",
+  "centroid_lat": -3.3731,
+  "centroid_lon": 29.9189,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

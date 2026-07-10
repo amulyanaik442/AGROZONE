@@ -1,0 +1,11 @@
+{
+  "name": "Bangladesh",
+  "code": "BD",
+  "continent": "Asia",
+  "centroid_lat": 23.685,
+  "centroid_lon": 90.3563,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

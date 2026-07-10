@@ -1,0 +1,11 @@
+{
+  "name": "Hungary",
+  "code": "HU",
+  "continent": "Europe",
+  "centroid_lat": 47.1625,
+  "centroid_lon": 19.5033,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

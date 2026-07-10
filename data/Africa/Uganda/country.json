@@ -1,0 +1,11 @@
+{
+  "name": "Uganda",
+  "code": "UG",
+  "continent": "Africa",
+  "centroid_lat": 1.3733,
+  "centroid_lon": 32.2903,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

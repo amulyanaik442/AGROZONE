@@ -1,0 +1,11 @@
+{
+  "name": "Samoa",
+  "code": "WS",
+  "continent": "Oceania",
+  "centroid_lat": -13.759,
+  "centroid_lon": -172.1046,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

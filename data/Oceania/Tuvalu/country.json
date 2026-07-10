@@ -1,0 +1,11 @@
+{
+  "name": "Tuvalu",
+  "code": "TV",
+  "continent": "Oceania",
+  "centroid_lat": -7.1095,
+  "centroid_lon": 177.6493,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

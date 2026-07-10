@@ -1,0 +1,11 @@
+{
+  "name": "Gambia",
+  "code": "GM",
+  "continent": "Africa",
+  "centroid_lat": 13.4432,
+  "centroid_lon": -15.3101,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

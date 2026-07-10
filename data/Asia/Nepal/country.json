@@ -1,0 +1,11 @@
+{
+  "name": "Nepal",
+  "code": "NP",
+  "continent": "Asia",
+  "centroid_lat": 28.3949,
+  "centroid_lon": 84.124,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

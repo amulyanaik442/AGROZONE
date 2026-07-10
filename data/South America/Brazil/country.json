@@ -1,0 +1,11 @@
+{
+  "name": "Brazil",
+  "code": "BR",
+  "continent": "South America",
+  "centroid_lat": -14.235,
+  "centroid_lon": -51.9253,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

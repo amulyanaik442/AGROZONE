@@ -1,0 +1,11 @@
+{
+  "name": "Philippines",
+  "code": "PH",
+  "continent": "Asia",
+  "centroid_lat": 12.8797,
+  "centroid_lon": 121.774,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Estonia",
+  "code": "EE",
+  "continent": "Europe",
+  "centroid_lat": 58.5953,
+  "centroid_lon": 25.0136,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

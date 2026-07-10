@@ -1,0 +1,11 @@
+{
+  "name": "Slovenia",
+  "code": "SI",
+  "continent": "Europe",
+  "centroid_lat": 46.1512,
+  "centroid_lon": 14.9955,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

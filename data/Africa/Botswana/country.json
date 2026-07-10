@@ -1,0 +1,11 @@
+{
+  "name": "Botswana",
+  "code": "BW",
+  "continent": "Africa",
+  "centroid_lat": -22.3285,
+  "centroid_lon": 24.6849,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

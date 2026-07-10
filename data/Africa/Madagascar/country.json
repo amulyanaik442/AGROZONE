@@ -1,0 +1,11 @@
+{
+  "name": "Madagascar",
+  "code": "MG",
+  "continent": "Africa",
+  "centroid_lat": -18.7669,
+  "centroid_lon": 46.8691,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

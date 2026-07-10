@@ -1,0 +1,11 @@
+{
+  "name": "Malawi",
+  "code": "MW",
+  "continent": "Africa",
+  "centroid_lat": -13.2543,
+  "centroid_lon": 34.3015,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

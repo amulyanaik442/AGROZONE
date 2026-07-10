@@ -1,0 +1,11 @@
+{
+  "name": "Uzbekistan",
+  "code": "UZ",
+  "continent": "Asia",
+  "centroid_lat": 41.3775,
+  "centroid_lon": 64.5853,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

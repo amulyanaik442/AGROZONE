@@ -1,0 +1,11 @@
+{
+  "name": "Australia",
+  "code": "AU",
+  "continent": "Oceania",
+  "centroid_lat": -25.2744,
+  "centroid_lon": 133.7751,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Switzerland",
+  "code": "CH",
+  "continent": "Europe",
+  "centroid_lat": 46.8182,
+  "centroid_lon": 8.2275,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

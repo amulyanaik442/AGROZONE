@@ -1,0 +1,11 @@
+{
+  "name": "Kyrgyzstan",
+  "code": "KG",
+  "continent": "Asia",
+  "centroid_lat": 41.2044,
+  "centroid_lon": 74.7661,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

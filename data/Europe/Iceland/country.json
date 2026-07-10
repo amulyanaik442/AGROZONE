@@ -1,0 +1,11 @@
+{
+  "name": "Iceland",
+  "code": "IS",
+  "continent": "Europe",
+  "centroid_lat": 64.9631,
+  "centroid_lon": -19.0208,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Cyprus",
+  "code": "CY",
+  "continent": "Europe",
+  "centroid_lat": 35.1264,
+  "centroid_lon": 33.4299,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

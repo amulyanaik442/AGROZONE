@@ -1,0 +1,11 @@
+{
+  "name": "Austria",
+  "code": "AT",
+  "continent": "Europe",
+  "centroid_lat": 47.5162,
+  "centroid_lon": 14.5501,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

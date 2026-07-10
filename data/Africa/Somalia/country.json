@@ -1,0 +1,11 @@
+{
+  "name": "Somalia",
+  "code": "SO",
+  "continent": "Africa",
+  "centroid_lat": 5.1521,
+  "centroid_lon": 46.1996,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Denmark",
+  "code": "DK",
+  "continent": "Europe",
+  "centroid_lat": 56.2639,
+  "centroid_lon": 9.5018,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

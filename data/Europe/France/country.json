@@ -4,6 +4,8 @@
   "continent": "Europe",
   "centroid_lat": 46.6034,
   "centroid_lon": 1.8883,
-  "admin_hierarchy": ["Region", "Department"],
+  "admin_hierarchy": [
+    "State"
+  ],
   "crop_excel_files": []
 }

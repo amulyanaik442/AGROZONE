@@ -1,0 +1,11 @@
+{
+  "name": "Kosovo",
+  "code": "XK",
+  "continent": "Europe",
+  "centroid_lat": 42.6026,
+  "centroid_lon": 20.903,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

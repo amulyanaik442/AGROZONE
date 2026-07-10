@@ -1,0 +1,11 @@
+{
+  "name": "Spain",
+  "code": "ES",
+  "continent": "Europe",
+  "centroid_lat": 40.4637,
+  "centroid_lon": -3.7492,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

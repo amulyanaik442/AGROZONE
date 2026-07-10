@@ -1,0 +1,11 @@
+{
+  "name": "Yemen",
+  "code": "YE",
+  "continent": "Asia",
+  "centroid_lat": 15.5527,
+  "centroid_lon": 48.5164,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

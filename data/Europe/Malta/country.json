@@ -1,0 +1,11 @@
+{
+  "name": "Malta",
+  "code": "MT",
+  "continent": "Europe",
+  "centroid_lat": 35.9375,
+  "centroid_lon": 14.3754,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

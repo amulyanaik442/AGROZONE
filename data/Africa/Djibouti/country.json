@@ -1,0 +1,11 @@
+{
+  "name": "Djibouti",
+  "code": "DJ",
+  "continent": "Africa",
+  "centroid_lat": 11.8251,
+  "centroid_lon": 42.5903,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Cambodia",
+  "code": "KH",
+  "continent": "Asia",
+  "centroid_lat": 12.5657,
+  "centroid_lon": 104.991,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

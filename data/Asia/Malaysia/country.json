@@ -1,0 +1,11 @@
+{
+  "name": "Malaysia",
+  "code": "MY",
+  "continent": "Asia",
+  "centroid_lat": 4.2105,
+  "centroid_lon": 101.9758,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

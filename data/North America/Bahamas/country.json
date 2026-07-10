@@ -1,0 +1,11 @@
+{
+  "name": "Bahamas",
+  "code": "BS",
+  "continent": "North America",
+  "centroid_lat": 25.0343,
+  "centroid_lon": -77.3963,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

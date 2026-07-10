@@ -1,0 +1,11 @@
+{
+  "name": "Zambia",
+  "code": "ZM",
+  "continent": "Africa",
+  "centroid_lat": -13.1339,
+  "centroid_lon": 27.8493,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

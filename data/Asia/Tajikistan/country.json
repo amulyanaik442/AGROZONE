@@ -1,0 +1,11 @@
+{
+  "name": "Tajikistan",
+  "code": "TJ",
+  "continent": "Asia",
+  "centroid_lat": 38.861,
+  "centroid_lon": 71.2761,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

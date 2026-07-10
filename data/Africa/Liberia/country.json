@@ -1,0 +1,11 @@
+{
+  "name": "Liberia",
+  "code": "LR",
+  "continent": "Africa",
+  "centroid_lat": 6.4281,
+  "centroid_lon": -9.4295,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

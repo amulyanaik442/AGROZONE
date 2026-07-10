@@ -1,0 +1,11 @@
+{
+  "name": "Mongolia",
+  "code": "MN",
+  "continent": "Asia",
+  "centroid_lat": 46.8625,
+  "centroid_lon": 103.8467,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

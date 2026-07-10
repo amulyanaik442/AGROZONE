@@ -1,0 +1,11 @@
+{
+  "name": "Palestine",
+  "code": "PS",
+  "continent": "Asia",
+  "centroid_lat": 31.9522,
+  "centroid_lon": 35.2332,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

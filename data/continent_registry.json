@@ -13,9 +13,17 @@
       "name": "Europe",
       "path": "data/Europe"
     },
-    "AM": {
-      "name": "America",
-      "path": "data/America"
+    "NA": {
+      "name": "North America",
+      "path": "data/North America"
+    },
+    "SA": {
+      "name": "South America",
+      "path": "data/South America"
+    },
+    "OC": {
+      "name": "Oceania",
+      "path": "data/Oceania"
     }
   }
 }

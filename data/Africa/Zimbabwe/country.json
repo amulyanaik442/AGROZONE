@@ -1,0 +1,11 @@
+{
+  "name": "Zimbabwe",
+  "code": "ZW",
+  "continent": "Africa",
+  "centroid_lat": -19.0154,
+  "centroid_lon": 29.1549,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

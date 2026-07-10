@@ -1,0 +1,11 @@
+{
+  "name": "Jordan",
+  "code": "JO",
+  "continent": "Asia",
+  "centroid_lat": 30.5852,
+  "centroid_lon": 36.2384,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

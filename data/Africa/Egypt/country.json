@@ -1,0 +1,11 @@
+{
+  "name": "Egypt",
+  "code": "EG",
+  "continent": "Africa",
+  "centroid_lat": 26.8206,
+  "centroid_lon": 30.8025,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

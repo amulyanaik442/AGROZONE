@@ -1,0 +1,11 @@
+{
+  "name": "Colombia",
+  "code": "CO",
+  "continent": "South America",
+  "centroid_lat": 4.5709,
+  "centroid_lon": -74.2973,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Ukraine",
+  "code": "UA",
+  "continent": "Europe",
+  "centroid_lat": 48.3794,
+  "centroid_lon": 31.1656,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

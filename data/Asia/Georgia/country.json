@@ -1,0 +1,11 @@
+{
+  "name": "Georgia",
+  "code": "GE",
+  "continent": "Asia",
+  "centroid_lat": 42.3154,
+  "centroid_lon": 43.3569,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Tonga",
+  "code": "TO",
+  "continent": "Oceania",
+  "centroid_lat": -21.179,
+  "centroid_lon": -175.1982,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

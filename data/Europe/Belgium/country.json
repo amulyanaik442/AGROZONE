@@ -1,0 +1,11 @@
+{
+  "name": "Belgium",
+  "code": "BE",
+  "continent": "Europe",
+  "centroid_lat": 50.8503,
+  "centroid_lon": 4.3517,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

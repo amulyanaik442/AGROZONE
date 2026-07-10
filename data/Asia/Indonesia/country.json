@@ -1,0 +1,11 @@
+{
+  "name": "Indonesia",
+  "code": "ID",
+  "continent": "Asia",
+  "centroid_lat": -0.7893,
+  "centroid_lon": 113.9213,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

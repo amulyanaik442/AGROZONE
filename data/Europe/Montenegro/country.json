@@ -1,0 +1,11 @@
+{
+  "name": "Montenegro",
+  "code": "ME",
+  "continent": "Europe",
+  "centroid_lat": 42.7087,
+  "centroid_lon": 19.3744,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

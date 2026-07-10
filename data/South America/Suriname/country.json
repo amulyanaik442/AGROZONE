@@ -1,0 +1,11 @@
+{
+  "name": "Suriname",
+  "code": "SR",
+  "continent": "South America",
+  "centroid_lat": 3.9193,
+  "centroid_lon": -56.0278,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

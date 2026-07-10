@@ -1,0 +1,11 @@
+{
+  "name": "Benin",
+  "code": "BJ",
+  "continent": "Africa",
+  "centroid_lat": 9.3077,
+  "centroid_lon": 2.3158,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

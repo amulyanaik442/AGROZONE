@@ -1,0 +1,11 @@
+{
+  "name": "Thailand",
+  "code": "TH",
+  "continent": "Asia",
+  "centroid_lat": 15.87,
+  "centroid_lon": 100.9925,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

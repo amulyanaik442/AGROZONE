@@ -1,0 +1,11 @@
+{
+  "name": "Guinea-Bissau",
+  "code": "GW",
+  "continent": "Africa",
+  "centroid_lat": 11.8037,
+  "centroid_lon": -15.1804,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Haiti",
+  "code": "HT",
+  "continent": "North America",
+  "centroid_lat": 18.9712,
+  "centroid_lon": -72.2852,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

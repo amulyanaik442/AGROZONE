@@ -1,0 +1,11 @@
+{
+  "name": "Japan",
+  "code": "JP",
+  "continent": "Asia",
+  "centroid_lat": 36.2048,
+  "centroid_lon": 138.2529,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

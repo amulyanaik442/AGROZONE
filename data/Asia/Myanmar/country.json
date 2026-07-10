@@ -1,0 +1,11 @@
+{
+  "name": "Myanmar",
+  "code": "MM",
+  "continent": "Asia",
+  "centroid_lat": 21.9162,
+  "centroid_lon": 95.956,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

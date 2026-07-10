@@ -1,0 +1,11 @@
+{
+  "name": "Tanzania",
+  "code": "TZ",
+  "continent": "Africa",
+  "centroid_lat": -6.369,
+  "centroid_lon": 34.8888,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

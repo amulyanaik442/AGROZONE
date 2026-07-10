@@ -1,0 +1,11 @@
+{
+  "name": "Lesotho",
+  "code": "LS",
+  "continent": "Africa",
+  "centroid_lat": -29.61,
+  "centroid_lon": 28.2336,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

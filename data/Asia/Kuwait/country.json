@@ -1,0 +1,11 @@
+{
+  "name": "Kuwait",
+  "code": "KW",
+  "continent": "Asia",
+  "centroid_lat": 29.3117,
+  "centroid_lon": 47.4818,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

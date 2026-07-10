@@ -1,0 +1,11 @@
+{
+  "name": "Comoros",
+  "code": "KM",
+  "continent": "Africa",
+  "centroid_lat": -11.6455,
+  "centroid_lon": 43.3333,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

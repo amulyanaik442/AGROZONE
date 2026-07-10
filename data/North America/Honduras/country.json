@@ -1,0 +1,11 @@
+{
+  "name": "Honduras",
+  "code": "HN",
+  "continent": "North America",
+  "centroid_lat": 15.2,
+  "centroid_lon": -86.2419,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

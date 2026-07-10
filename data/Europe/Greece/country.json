@@ -1,0 +1,11 @@
+{
+  "name": "Greece",
+  "code": "GR",
+  "continent": "Europe",
+  "centroid_lat": 39.0742,
+  "centroid_lon": 21.8243,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

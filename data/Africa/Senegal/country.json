@@ -1,0 +1,11 @@
+{
+  "name": "Senegal",
+  "code": "SN",
+  "continent": "Africa",
+  "centroid_lat": 14.4974,
+  "centroid_lon": -14.4524,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

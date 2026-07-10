@@ -1,0 +1,11 @@
+{
+  "name": "Algeria",
+  "code": "DZ",
+  "continent": "Africa",
+  "centroid_lat": 28.0339,
+  "centroid_lon": 1.6596,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

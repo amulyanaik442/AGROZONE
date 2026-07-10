@@ -1,0 +1,11 @@
+{
+  "name": "Argentina",
+  "code": "AR",
+  "continent": "South America",
+  "centroid_lat": -38.4161,
+  "centroid_lon": -63.6167,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

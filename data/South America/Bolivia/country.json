@@ -1,0 +1,11 @@
+{
+  "name": "Bolivia",
+  "code": "BO",
+  "continent": "South America",
+  "centroid_lat": -16.2902,
+  "centroid_lon": -63.5887,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Rwanda",
+  "code": "RW",
+  "continent": "Africa",
+  "centroid_lat": -1.9403,
+  "centroid_lon": 29.8739,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

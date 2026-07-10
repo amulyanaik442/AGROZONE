@@ -1,0 +1,11 @@
+{
+  "name": "Kazakhstan",
+  "code": "KZ",
+  "continent": "Asia",
+  "centroid_lat": 48.0196,
+  "centroid_lon": 66.9237,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Mauritius",
+  "code": "MU",
+  "continent": "Africa",
+  "centroid_lat": -20.3484,
+  "centroid_lon": 57.5522,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

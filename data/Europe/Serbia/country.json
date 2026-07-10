@@ -1,0 +1,11 @@
+{
+  "name": "Serbia",
+  "code": "RS",
+  "continent": "Europe",
+  "centroid_lat": 44.0165,
+  "centroid_lon": 21.0059,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

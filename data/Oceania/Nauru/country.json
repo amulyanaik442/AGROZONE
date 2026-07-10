@@ -1,0 +1,11 @@
+{
+  "name": "Nauru",
+  "code": "NR",
+  "continent": "Oceania",
+  "centroid_lat": -0.5228,
+  "centroid_lon": 166.9315,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

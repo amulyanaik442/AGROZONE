@@ -1,0 +1,11 @@
+{
+  "name": "Qatar",
+  "code": "QA",
+  "continent": "Asia",
+  "centroid_lat": 25.3548,
+  "centroid_lon": 51.1839,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

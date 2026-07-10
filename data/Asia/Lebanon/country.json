@@ -1,0 +1,11 @@
+{
+  "name": "Lebanon",
+  "code": "LB",
+  "continent": "Asia",
+  "centroid_lat": 33.8547,
+  "centroid_lon": 35.8623,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

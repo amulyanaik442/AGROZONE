@@ -1,0 +1,11 @@
+{
+  "name": "Latvia",
+  "code": "LV",
+  "continent": "Europe",
+  "centroid_lat": 56.8796,
+  "centroid_lon": 24.6032,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

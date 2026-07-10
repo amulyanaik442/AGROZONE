@@ -1,0 +1,11 @@
+{
+  "name": "Guinea",
+  "code": "GN",
+  "continent": "Africa",
+  "centroid_lat": 9.9456,
+  "centroid_lon": -9.6966,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

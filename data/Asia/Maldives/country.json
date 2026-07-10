@@ -1,0 +1,11 @@
+{
+  "name": "Maldives",
+  "code": "MV",
+  "continent": "Asia",
+  "centroid_lat": 3.2028,
+  "centroid_lon": 73.2207,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

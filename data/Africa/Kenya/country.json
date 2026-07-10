@@ -4,6 +4,8 @@
   "continent": "Africa",
   "centroid_lat": -0.0236,
   "centroid_lon": 37.9062,
-  "admin_hierarchy": ["County", "Sub-county"],
+  "admin_hierarchy": [
+    "State"
+  ],
   "crop_excel_files": []
 }

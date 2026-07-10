@@ -1,0 +1,11 @@
+{
+  "name": "Iran",
+  "code": "IR",
+  "continent": "Asia",
+  "centroid_lat": 32.4279,
+  "centroid_lon": 53.688,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

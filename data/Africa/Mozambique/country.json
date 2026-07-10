@@ -1,0 +1,11 @@
+{
+  "name": "Mozambique",
+  "code": "MZ",
+  "continent": "Africa",
+  "centroid_lat": -18.6657,
+  "centroid_lon": 35.5296,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

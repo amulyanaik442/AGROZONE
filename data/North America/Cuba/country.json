@@ -1,0 +1,11 @@
+{
+  "name": "Cuba",
+  "code": "CU",
+  "continent": "North America",
+  "centroid_lat": 21.5218,
+  "centroid_lon": -77.7812,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

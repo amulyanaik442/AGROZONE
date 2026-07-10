@@ -1,0 +1,11 @@
+{
+  "name": "Ireland",
+  "code": "IE",
+  "continent": "Europe",
+  "centroid_lat": 53.1424,
+  "centroid_lon": -7.6921,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

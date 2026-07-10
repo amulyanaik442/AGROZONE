@@ -1,0 +1,11 @@
+{
+  "name": "Sweden",
+  "code": "SE",
+  "continent": "Europe",
+  "centroid_lat": 60.1282,
+  "centroid_lon": 18.6435,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

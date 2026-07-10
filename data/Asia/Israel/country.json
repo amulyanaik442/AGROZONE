@@ -1,0 +1,11 @@
+{
+  "name": "Israel",
+  "code": "IL",
+  "continent": "Asia",
+  "centroid_lat": 31.0461,
+  "centroid_lon": 34.8516,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

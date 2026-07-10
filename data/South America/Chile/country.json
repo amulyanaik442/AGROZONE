@@ -1,0 +1,11 @@
+{
+  "name": "Chile",
+  "code": "CL",
+  "continent": "South America",
+  "centroid_lat": -35.6751,
+  "centroid_lon": -71.543,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

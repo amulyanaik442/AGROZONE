@@ -1,0 +1,11 @@
+{
+  "name": "Panama",
+  "code": "PA",
+  "continent": "North America",
+  "centroid_lat": 8.538,
+  "centroid_lon": -80.7821,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,47 +1,2083 @@
 {
   "countries": [
-    {"name": "India", "code": "IN", "continent_code": "AS", "centroid_lat": 20.5937, "centroid_lon": 78.9629, "admin_hierarchy": ["State", "District", "Taluk"], "dataset_path": "data/Asia/India"},
-
-    {"name": "Nigeria", "code": "NG", "continent_code": "AF", "centroid_lat": 9.0820, "centroid_lon": 8.6753, "admin_hierarchy": ["State", "Local Government Area"], "dataset_path": "data/Africa/Nigeria"},
-    {"name": "Egypt", "code": "EG", "continent_code": "AF", "centroid_lat": 26.8206, "centroid_lon": 30.8025, "admin_hierarchy": ["Governorate", "Markaz"], "dataset_path": "data/Africa/Egypt"},
-    {"name": "Ethiopia", "code": "ET", "continent_code": "AF", "centroid_lat": 9.1450, "centroid_lon": 40.4897, "admin_hierarchy": ["Region", "Zone", "Woreda"], "dataset_path": "data/Africa/Ethiopia"},
-    {"name": "Kenya", "code": "KE", "continent_code": "AF", "centroid_lat": -0.0236, "centroid_lon": 37.9062, "admin_hierarchy": ["County", "Sub-county"], "dataset_path": "data/Africa/Kenya"},
-    {"name": "South Africa", "code": "ZA", "continent_code": "AF", "centroid_lat": -30.5595, "centroid_lon": 22.9375, "admin_hierarchy": ["Province", "District", "Municipality"], "dataset_path": "data/Africa/South_Africa"},
-    {"name": "Morocco", "code": "MA", "continent_code": "AF", "centroid_lat": 31.7917, "centroid_lon": -7.0926, "admin_hierarchy": ["Region", "Province"], "dataset_path": "data/Africa/Morocco"},
-    {"name": "Ghana", "code": "GH", "continent_code": "AF", "centroid_lat": 7.9465, "centroid_lon": -1.0232, "admin_hierarchy": ["Region", "District"], "dataset_path": "data/Africa/Ghana"},
-    {"name": "Tanzania", "code": "TZ", "continent_code": "AF", "centroid_lat": -6.3690, "centroid_lon": 34.8888, "admin_hierarchy": ["Region", "District"], "dataset_path": "data/Africa/Tanzania"},
-    {"name": "Uganda", "code": "UG", "continent_code": "AF", "centroid_lat": 1.3733, "centroid_lon": 32.2903, "admin_hierarchy": ["Region", "District"], "dataset_path": "data/Africa/Uganda"},
-    {"name": "C\u00f4te d'Ivoire", "code": "CI", "continent_code": "AF", "centroid_lat": 7.5400, "centroid_lon": -5.5471, "admin_hierarchy": ["District", "Region"], "dataset_path": "data/Africa/C\u00f4te_d'Ivoire"},
-    {"name": "Algeria", "code": "DZ", "continent_code": "AF", "centroid_lat": 28.0339, "centroid_lon": 1.6596, "admin_hierarchy": ["Province", "District"], "dataset_path": "data/Africa/Algeria"},
-    {"name": "Sudan", "code": "SD", "continent_code": "AF", "centroid_lat": 12.8628, "centroid_lon": 30.2176, "admin_hierarchy": ["State", "Locality"], "dataset_path": "data/Africa/Sudan"},
-    {"name": "Cameroon", "code": "CM", "continent_code": "AF", "centroid_lat": 7.3697, "centroid_lon": 12.3547, "admin_hierarchy": ["Region", "Department"], "dataset_path": "data/Africa/Cameroon"},
-
-    {"name": "France", "code": "FR", "continent_code": "EU", "centroid_lat": 46.6034, "centroid_lon": 1.8883, "admin_hierarchy": ["Region", "Department"], "dataset_path": "data/Europe/France"},
-    {"name": "Germany", "code": "DE", "continent_code": "EU", "centroid_lat": 51.1657, "centroid_lon": 10.4515, "admin_hierarchy": ["State", "District"], "dataset_path": "data/Europe/Germany"},
-    {"name": "Poland", "code": "PL", "continent_code": "EU", "centroid_lat": 51.9194, "centroid_lon": 19.1451, "admin_hierarchy": ["Voivodeship", "County"], "dataset_path": "data/Europe/Poland"},
-    {"name": "Spain", "code": "ES", "continent_code": "EU", "centroid_lat": 40.4637, "centroid_lon": -3.7492, "admin_hierarchy": ["Autonomous Community", "Province"], "dataset_path": "data/Europe/Spain"},
-    {"name": "Italy", "code": "IT", "continent_code": "EU", "centroid_lat": 41.8719, "centroid_lon": 12.5674, "admin_hierarchy": ["Region", "Province", "Municipality"], "dataset_path": "data/Europe/Italy"},
-    {"name": "Romania", "code": "RO", "continent_code": "EU", "centroid_lat": 45.9432, "centroid_lon": 24.9668, "admin_hierarchy": ["County", "Municipality"], "dataset_path": "data/Europe/Romania"},
-    {"name": "Netherlands", "code": "NL", "continent_code": "EU", "centroid_lat": 52.1326, "centroid_lon": 5.2913, "admin_hierarchy": ["Province", "Municipality"], "dataset_path": "data/Europe/Netherlands"},
-    {"name": "Ukraine", "code": "UA", "continent_code": "EU", "centroid_lat": 48.3794, "centroid_lon": 31.1656, "admin_hierarchy": ["Oblast", "Raion"], "dataset_path": "data/Europe/Ukraine"},
-    {"name": "United Kingdom", "code": "GB", "continent_code": "EU", "centroid_lat": 55.3781, "centroid_lon": -3.4360, "admin_hierarchy": ["Country", "County"], "dataset_path": "data/Europe/United_Kingdom"},
-    {"name": "Greece", "code": "GR", "continent_code": "EU", "centroid_lat": 39.0742, "centroid_lon": 21.8243, "admin_hierarchy": ["Region", "Regional Unit"], "dataset_path": "data/Europe/Greece"},
-    {"name": "Hungary", "code": "HU", "continent_code": "EU", "centroid_lat": 47.1625, "centroid_lon": 19.5033, "admin_hierarchy": ["County", "District"], "dataset_path": "data/Europe/Hungary"},
-    {"name": "Bulgaria", "code": "BG", "continent_code": "EU", "centroid_lat": 42.7339, "centroid_lon": 25.4858, "admin_hierarchy": ["Province", "Municipality"], "dataset_path": "data/Europe/Bulgaria"},
-    {"name": "Denmark", "code": "DK", "continent_code": "EU", "centroid_lat": 56.2639, "centroid_lon": 9.5018, "admin_hierarchy": ["Region", "Municipality"], "dataset_path": "data/Europe/Denmark"},
-
-    {"name": "United States", "code": "US", "continent_code": "AM", "centroid_lat": 37.0902, "centroid_lon": -95.7129, "admin_hierarchy": ["State", "County"], "dataset_path": "data/America/United_States"},
-    {"name": "Brazil", "code": "BR", "continent_code": "AM", "centroid_lat": -14.2350, "centroid_lon": -51.9253, "admin_hierarchy": ["State", "Municipality"], "dataset_path": "data/America/Brazil"},
-    {"name": "Mexico", "code": "MX", "continent_code": "AM", "centroid_lat": 23.6345, "centroid_lon": -102.5528, "admin_hierarchy": ["State", "Municipality"], "dataset_path": "data/America/Mexico"},
-    {"name": "Argentina", "code": "AR", "continent_code": "AM", "centroid_lat": -38.4161, "centroid_lon": -63.6167, "admin_hierarchy": ["Province", "Department"], "dataset_path": "data/America/Argentina"},
-    {"name": "Canada", "code": "CA", "continent_code": "AM", "centroid_lat": 56.1304, "centroid_lon": -106.3468, "admin_hierarchy": ["Province", "Territory"], "dataset_path": "data/America/Canada"},
-    {"name": "Colombia", "code": "CO", "continent_code": "AM", "centroid_lat": 4.5709, "centroid_lon": -74.2973, "admin_hierarchy": ["Department", "Municipality"], "dataset_path": "data/America/Colombia"},
-    {"name": "Peru", "code": "PE", "continent_code": "AM", "centroid_lat": -9.1900, "centroid_lon": -75.0152, "admin_hierarchy": ["Department", "Province"], "dataset_path": "data/America/Peru"},
-    {"name": "Chile", "code": "CL", "continent_code": "AM", "centroid_lat": -35.6751, "centroid_lon": -71.5430, "admin_hierarchy": ["Region", "Province"], "dataset_path": "data/America/Chile"},
-    {"name": "Ecuador", "code": "EC", "continent_code": "AM", "centroid_lat": -1.8312, "centroid_lon": -78.1834, "admin_hierarchy": ["Province", "Canton"], "dataset_path": "data/America/Ecuador"},
-    {"name": "Guatemala", "code": "GT", "continent_code": "AM", "centroid_lat": 15.7835, "centroid_lon": -90.2308, "admin_hierarchy": ["Department", "Municipality"], "dataset_path": "data/America/Guatemala"},
-    {"name": "Costa Rica", "code": "CR", "continent_code": "AM", "centroid_lat": 9.7489, "centroid_lon": -83.7534, "admin_hierarchy": ["Province", "Canton"], "dataset_path": "data/America/Costa_Rica"},
-    {"name": "Paraguay", "code": "PY", "continent_code": "AM", "centroid_lat": -23.4425, "centroid_lon": -58.4438, "admin_hierarchy": ["Department", "District"], "dataset_path": "data/America/Paraguay"},
-    {"name": "Bolivia", "code": "BO", "continent_code": "AM", "centroid_lat": -16.2902, "centroid_lon": -63.5887, "admin_hierarchy": ["Department", "Province"], "dataset_path": "data/America/Bolivia"}
+    {
+      "name": "Afghanistan",
+      "code": "AF",
+      "continent_code": "AS",
+      "centroid_lat": 33.93911,
+      "centroid_lon": 67.70995,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Afghanistan"
+    },
+    {
+      "name": "Armenia",
+      "code": "AM",
+      "continent_code": "AS",
+      "centroid_lat": 40.0691,
+      "centroid_lon": 45.0382,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Armenia"
+    },
+    {
+      "name": "Azerbaijan",
+      "code": "AZ",
+      "continent_code": "AS",
+      "centroid_lat": 40.1431,
+      "centroid_lon": 47.5769,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Azerbaijan"
+    },
+    {
+      "name": "Bahrain",
+      "code": "BH",
+      "continent_code": "AS",
+      "centroid_lat": 26.0667,
+      "centroid_lon": 50.5577,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Bahrain"
+    },
+    {
+      "name": "Bangladesh",
+      "code": "BD",
+      "continent_code": "AS",
+      "centroid_lat": 23.685,
+      "centroid_lon": 90.3563,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Bangladesh"
+    },
+    {
+      "name": "Bhutan",
+      "code": "BT",
+      "continent_code": "AS",
+      "centroid_lat": 27.5142,
+      "centroid_lon": 90.4336,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Bhutan"
+    },
+    {
+      "name": "Brunei",
+      "code": "BN",
+      "continent_code": "AS",
+      "centroid_lat": 4.5353,
+      "centroid_lon": 114.7277,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Brunei"
+    },
+    {
+      "name": "Cambodia",
+      "code": "KH",
+      "continent_code": "AS",
+      "centroid_lat": 12.5657,
+      "centroid_lon": 104.991,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Cambodia"
+    },
+    {
+      "name": "China",
+      "code": "CN",
+      "continent_code": "AS",
+      "centroid_lat": 35.8617,
+      "centroid_lon": 104.1954,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/China"
+    },
+    {
+      "name": "Georgia",
+      "code": "GE",
+      "continent_code": "AS",
+      "centroid_lat": 42.3154,
+      "centroid_lon": 43.3569,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Georgia"
+    },
+    {
+      "name": "India",
+      "code": "IN",
+      "continent_code": "AS",
+      "centroid_lat": 20.5937,
+      "centroid_lon": 78.9629,
+      "admin_hierarchy": [
+        "State",
+        "District",
+        "Taluk"
+      ],
+      "dataset_path": "data/Asia/India"
+    },
+    {
+      "name": "Indonesia",
+      "code": "ID",
+      "continent_code": "AS",
+      "centroid_lat": -0.7893,
+      "centroid_lon": 113.9213,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Indonesia"
+    },
+    {
+      "name": "Iran",
+      "code": "IR",
+      "continent_code": "AS",
+      "centroid_lat": 32.4279,
+      "centroid_lon": 53.688,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Iran"
+    },
+    {
+      "name": "Iraq",
+      "code": "IQ",
+      "continent_code": "AS",
+      "centroid_lat": 33.2232,
+      "centroid_lon": 43.6793,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Iraq"
+    },
+    {
+      "name": "Israel",
+      "code": "IL",
+      "continent_code": "AS",
+      "centroid_lat": 31.0461,
+      "centroid_lon": 34.8516,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Israel"
+    },
+    {
+      "name": "Japan",
+      "code": "JP",
+      "continent_code": "AS",
+      "centroid_lat": 36.2048,
+      "centroid_lon": 138.2529,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Japan"
+    },
+    {
+      "name": "Jordan",
+      "code": "JO",
+      "continent_code": "AS",
+      "centroid_lat": 30.5852,
+      "centroid_lon": 36.2384,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Jordan"
+    },
+    {
+      "name": "Kazakhstan",
+      "code": "KZ",
+      "continent_code": "AS",
+      "centroid_lat": 48.0196,
+      "centroid_lon": 66.9237,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Kazakhstan"
+    },
+    {
+      "name": "Kuwait",
+      "code": "KW",
+      "continent_code": "AS",
+      "centroid_lat": 29.3117,
+      "centroid_lon": 47.4818,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Kuwait"
+    },
+    {
+      "name": "Kyrgyzstan",
+      "code": "KG",
+      "continent_code": "AS",
+      "centroid_lat": 41.2044,
+      "centroid_lon": 74.7661,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Kyrgyzstan"
+    },
+    {
+      "name": "Laos",
+      "code": "LA",
+      "continent_code": "AS",
+      "centroid_lat": 19.8563,
+      "centroid_lon": 102.4955,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Laos"
+    },
+    {
+      "name": "Lebanon",
+      "code": "LB",
+      "continent_code": "AS",
+      "centroid_lat": 33.8547,
+      "centroid_lon": 35.8623,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Lebanon"
+    },
+    {
+      "name": "Malaysia",
+      "code": "MY",
+      "continent_code": "AS",
+      "centroid_lat": 4.2105,
+      "centroid_lon": 101.9758,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Malaysia"
+    },
+    {
+      "name": "Maldives",
+      "code": "MV",
+      "continent_code": "AS",
+      "centroid_lat": 3.2028,
+      "centroid_lon": 73.2207,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Maldives"
+    },
+    {
+      "name": "Mongolia",
+      "code": "MN",
+      "continent_code": "AS",
+      "centroid_lat": 46.8625,
+      "centroid_lon": 103.8467,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Mongolia"
+    },
+    {
+      "name": "Myanmar",
+      "code": "MM",
+      "continent_code": "AS",
+      "centroid_lat": 21.9162,
+      "centroid_lon": 95.956,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Myanmar"
+    },
+    {
+      "name": "Nepal",
+      "code": "NP",
+      "continent_code": "AS",
+      "centroid_lat": 28.3949,
+      "centroid_lon": 84.124,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Nepal"
+    },
+    {
+      "name": "North Korea",
+      "code": "KP",
+      "continent_code": "AS",
+      "centroid_lat": 40.3399,
+      "centroid_lon": 127.5101,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/North Korea"
+    },
+    {
+      "name": "Oman",
+      "code": "OM",
+      "continent_code": "AS",
+      "centroid_lat": 21.5126,
+      "centroid_lon": 55.9233,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Oman"
+    },
+    {
+      "name": "Pakistan",
+      "code": "PK",
+      "continent_code": "AS",
+      "centroid_lat": 30.3753,
+      "centroid_lon": 69.3451,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Pakistan"
+    },
+    {
+      "name": "Palestine",
+      "code": "PS",
+      "continent_code": "AS",
+      "centroid_lat": 31.9522,
+      "centroid_lon": 35.2332,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Palestine"
+    },
+    {
+      "name": "Philippines",
+      "code": "PH",
+      "continent_code": "AS",
+      "centroid_lat": 12.8797,
+      "centroid_lon": 121.774,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Philippines"
+    },
+    {
+      "name": "Qatar",
+      "code": "QA",
+      "continent_code": "AS",
+      "centroid_lat": 25.3548,
+      "centroid_lon": 51.1839,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Qatar"
+    },
+    {
+      "name": "Saudi Arabia",
+      "code": "SA",
+      "continent_code": "AS",
+      "centroid_lat": 23.8859,
+      "centroid_lon": 45.0792,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Saudi Arabia"
+    },
+    {
+      "name": "South Korea",
+      "code": "KR",
+      "continent_code": "AS",
+      "centroid_lat": 35.9078,
+      "centroid_lon": 127.7669,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/South Korea"
+    },
+    {
+      "name": "Sri Lanka",
+      "code": "LK",
+      "continent_code": "AS",
+      "centroid_lat": 7.8731,
+      "centroid_lon": 80.7718,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Sri Lanka"
+    },
+    {
+      "name": "Syria",
+      "code": "SY",
+      "continent_code": "AS",
+      "centroid_lat": 34.8021,
+      "centroid_lon": 38.9968,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Syria"
+    },
+    {
+      "name": "Taiwan",
+      "code": "TW",
+      "continent_code": "AS",
+      "centroid_lat": 23.6978,
+      "centroid_lon": 120.9605,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Taiwan"
+    },
+    {
+      "name": "Tajikistan",
+      "code": "TJ",
+      "continent_code": "AS",
+      "centroid_lat": 38.861,
+      "centroid_lon": 71.2761,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Tajikistan"
+    },
+    {
+      "name": "Thailand",
+      "code": "TH",
+      "continent_code": "AS",
+      "centroid_lat": 15.87,
+      "centroid_lon": 100.9925,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Thailand"
+    },
+    {
+      "name": "Timor-Leste",
+      "code": "TL",
+      "continent_code": "AS",
+      "centroid_lat": -8.8742,
+      "centroid_lon": 125.7275,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Timor-Leste"
+    },
+    {
+      "name": "Turkey",
+      "code": "TR",
+      "continent_code": "AS",
+      "centroid_lat": 38.9637,
+      "centroid_lon": 35.2433,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Turkey"
+    },
+    {
+      "name": "Turkmenistan",
+      "code": "TM",
+      "continent_code": "AS",
+      "centroid_lat": 38.9697,
+      "centroid_lon": 59.5563,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Turkmenistan"
+    },
+    {
+      "name": "United Arab Emirates",
+      "code": "AE",
+      "continent_code": "AS",
+      "centroid_lat": 23.4241,
+      "centroid_lon": 53.8478,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/United Arab Emirates"
+    },
+    {
+      "name": "Uzbekistan",
+      "code": "UZ",
+      "continent_code": "AS",
+      "centroid_lat": 41.3775,
+      "centroid_lon": 64.5853,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Uzbekistan"
+    },
+    {
+      "name": "Vietnam",
+      "code": "VN",
+      "continent_code": "AS",
+      "centroid_lat": 14.0583,
+      "centroid_lon": 108.2772,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Vietnam"
+    },
+    {
+      "name": "Yemen",
+      "code": "YE",
+      "continent_code": "AS",
+      "centroid_lat": 15.5527,
+      "centroid_lon": 48.5164,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Asia/Yemen"
+    },
+    {
+      "name": "Algeria",
+      "code": "DZ",
+      "continent_code": "AF",
+      "centroid_lat": 28.0339,
+      "centroid_lon": 1.6596,
+      "admin_hierarchy": [
+        "Province",
+        "District"
+      ],
+      "dataset_path": "data/Africa/Algeria"
+    },
+    {
+      "name": "Angola",
+      "code": "AO",
+      "continent_code": "AF",
+      "centroid_lat": -11.2027,
+      "centroid_lon": 17.8739,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Angola"
+    },
+    {
+      "name": "Benin",
+      "code": "BJ",
+      "continent_code": "AF",
+      "centroid_lat": 9.3077,
+      "centroid_lon": 2.3158,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Benin"
+    },
+    {
+      "name": "Botswana",
+      "code": "BW",
+      "continent_code": "AF",
+      "centroid_lat": -22.3285,
+      "centroid_lon": 24.6849,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Botswana"
+    },
+    {
+      "name": "Burkina Faso",
+      "code": "BF",
+      "continent_code": "AF",
+      "centroid_lat": 12.2383,
+      "centroid_lon": -1.5616,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Burkina Faso"
+    },
+    {
+      "name": "Burundi",
+      "code": "BI",
+      "continent_code": "AF",
+      "centroid_lat": -3.3731,
+      "centroid_lon": 29.9189,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Burundi"
+    },
+    {
+      "name": "Cameroon",
+      "code": "CM",
+      "continent_code": "AF",
+      "centroid_lat": 7.3697,
+      "centroid_lon": 12.3547,
+      "admin_hierarchy": [
+        "Region",
+        "Department"
+      ],
+      "dataset_path": "data/Africa/Cameroon"
+    },
+    {
+      "name": "Cape Verde",
+      "code": "CV",
+      "continent_code": "AF",
+      "centroid_lat": 16.5388,
+      "centroid_lon": -23.0418,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Cape Verde"
+    },
+    {
+      "name": "Central African Republic",
+      "code": "CF",
+      "continent_code": "AF",
+      "centroid_lat": 6.6111,
+      "centroid_lon": 20.9394,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Central African Republic"
+    },
+    {
+      "name": "Chad",
+      "code": "TD",
+      "continent_code": "AF",
+      "centroid_lat": 15.4542,
+      "centroid_lon": 18.7322,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Chad"
+    },
+    {
+      "name": "Comoros",
+      "code": "KM",
+      "continent_code": "AF",
+      "centroid_lat": -11.6455,
+      "centroid_lon": 43.3333,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Comoros"
+    },
+    {
+      "name": "Cote d'Ivoire",
+      "code": "CI",
+      "continent_code": "AF",
+      "centroid_lat": 7.54,
+      "centroid_lon": -5.5471,
+      "admin_hierarchy": [
+        "District",
+        "Region"
+      ],
+      "dataset_path": "data/Africa/Cote d'Ivoire"
+    },
+    {
+      "name": "Democratic Republic of Congo",
+      "code": "CD",
+      "continent_code": "AF",
+      "centroid_lat": -4.0383,
+      "centroid_lon": 21.7587,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Democratic Republic of Congo"
+    },
+    {
+      "name": "Djibouti",
+      "code": "DJ",
+      "continent_code": "AF",
+      "centroid_lat": 11.8251,
+      "centroid_lon": 42.5903,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Djibouti"
+    },
+    {
+      "name": "Egypt",
+      "code": "EG",
+      "continent_code": "AF",
+      "centroid_lat": 26.8206,
+      "centroid_lon": 30.8025,
+      "admin_hierarchy": [
+        "Governorate",
+        "Markaz"
+      ],
+      "dataset_path": "data/Africa/Egypt"
+    },
+    {
+      "name": "Equatorial Guinea",
+      "code": "GQ",
+      "continent_code": "AF",
+      "centroid_lat": 1.6508,
+      "centroid_lon": 10.2679,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Equatorial Guinea"
+    },
+    {
+      "name": "Eritrea",
+      "code": "ER",
+      "continent_code": "AF",
+      "centroid_lat": 15.1794,
+      "centroid_lon": 39.7823,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Eritrea"
+    },
+    {
+      "name": "Eswatini",
+      "code": "SZ",
+      "continent_code": "AF",
+      "centroid_lat": -26.5225,
+      "centroid_lon": 31.4659,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Eswatini"
+    },
+    {
+      "name": "Ethiopia",
+      "code": "ET",
+      "continent_code": "AF",
+      "centroid_lat": 9.145,
+      "centroid_lon": 40.4897,
+      "admin_hierarchy": [
+        "Region",
+        "Zone",
+        "Woreda"
+      ],
+      "dataset_path": "data/Africa/Ethiopia"
+    },
+    {
+      "name": "Gabon",
+      "code": "GA",
+      "continent_code": "AF",
+      "centroid_lat": -0.8037,
+      "centroid_lon": 11.6094,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Gabon"
+    },
+    {
+      "name": "Gambia",
+      "code": "GM",
+      "continent_code": "AF",
+      "centroid_lat": 13.4432,
+      "centroid_lon": -15.3101,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Gambia"
+    },
+    {
+      "name": "Ghana",
+      "code": "GH",
+      "continent_code": "AF",
+      "centroid_lat": 7.9465,
+      "centroid_lon": -1.0232,
+      "admin_hierarchy": [
+        "Region",
+        "District"
+      ],
+      "dataset_path": "data/Africa/Ghana"
+    },
+    {
+      "name": "Guinea",
+      "code": "GN",
+      "continent_code": "AF",
+      "centroid_lat": 9.9456,
+      "centroid_lon": -9.6966,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Guinea"
+    },
+    {
+      "name": "Guinea-Bissau",
+      "code": "GW",
+      "continent_code": "AF",
+      "centroid_lat": 11.8037,
+      "centroid_lon": -15.1804,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Guinea-Bissau"
+    },
+    {
+      "name": "Kenya",
+      "code": "KE",
+      "continent_code": "AF",
+      "centroid_lat": -0.0236,
+      "centroid_lon": 37.9062,
+      "admin_hierarchy": [
+        "County",
+        "Sub-county"
+      ],
+      "dataset_path": "data/Africa/Kenya"
+    },
+    {
+      "name": "Lesotho",
+      "code": "LS",
+      "continent_code": "AF",
+      "centroid_lat": -29.61,
+      "centroid_lon": 28.2336,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Lesotho"
+    },
+    {
+      "name": "Liberia",
+      "code": "LR",
+      "continent_code": "AF",
+      "centroid_lat": 6.4281,
+      "centroid_lon": -9.4295,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Liberia"
+    },
+    {
+      "name": "Libya",
+      "code": "LY",
+      "continent_code": "AF",
+      "centroid_lat": 26.3351,
+      "centroid_lon": 17.2283,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Libya"
+    },
+    {
+      "name": "Madagascar",
+      "code": "MG",
+      "continent_code": "AF",
+      "centroid_lat": -18.7669,
+      "centroid_lon": 46.8691,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Madagascar"
+    },
+    {
+      "name": "Malawi",
+      "code": "MW",
+      "continent_code": "AF",
+      "centroid_lat": -13.2543,
+      "centroid_lon": 34.3015,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Malawi"
+    },
+    {
+      "name": "Mali",
+      "code": "ML",
+      "continent_code": "AF",
+      "centroid_lat": 17.5707,
+      "centroid_lon": -3.9962,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Mali"
+    },
+    {
+      "name": "Mauritania",
+      "code": "MR",
+      "continent_code": "AF",
+      "centroid_lat": 21.0079,
+      "centroid_lon": -10.9408,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Mauritania"
+    },
+    {
+      "name": "Mauritius",
+      "code": "MU",
+      "continent_code": "AF",
+      "centroid_lat": -20.3484,
+      "centroid_lon": 57.5522,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Mauritius"
+    },
+    {
+      "name": "Morocco",
+      "code": "MA",
+      "continent_code": "AF",
+      "centroid_lat": 31.7917,
+      "centroid_lon": -7.0926,
+      "admin_hierarchy": [
+        "Region",
+        "Province"
+      ],
+      "dataset_path": "data/Africa/Morocco"
+    },
+    {
+      "name": "Mozambique",
+      "code": "MZ",
+      "continent_code": "AF",
+      "centroid_lat": -18.6657,
+      "centroid_lon": 35.5296,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Mozambique"
+    },
+    {
+      "name": "Namibia",
+      "code": "NA",
+      "continent_code": "AF",
+      "centroid_lat": -22.9576,
+      "centroid_lon": 18.4904,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Namibia"
+    },
+    {
+      "name": "Niger",
+      "code": "NE",
+      "continent_code": "AF",
+      "centroid_lat": 17.6078,
+      "centroid_lon": 8.0817,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Niger"
+    },
+    {
+      "name": "Nigeria",
+      "code": "NG",
+      "continent_code": "AF",
+      "centroid_lat": 9.082,
+      "centroid_lon": 8.6753,
+      "admin_hierarchy": [
+        "State",
+        "Local Government Area"
+      ],
+      "dataset_path": "data/Africa/Nigeria"
+    },
+    {
+      "name": "Republic of Congo",
+      "code": "CG",
+      "continent_code": "AF",
+      "centroid_lat": -0.228,
+      "centroid_lon": 15.8277,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Republic of Congo"
+    },
+    {
+      "name": "Rwanda",
+      "code": "RW",
+      "continent_code": "AF",
+      "centroid_lat": -1.9403,
+      "centroid_lon": 29.8739,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Rwanda"
+    },
+    {
+      "name": "Senegal",
+      "code": "SN",
+      "continent_code": "AF",
+      "centroid_lat": 14.4974,
+      "centroid_lon": -14.4524,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Senegal"
+    },
+    {
+      "name": "Seychelles",
+      "code": "SC",
+      "continent_code": "AF",
+      "centroid_lat": -4.6796,
+      "centroid_lon": 55.492,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Seychelles"
+    },
+    {
+      "name": "Sierra Leone",
+      "code": "SL",
+      "continent_code": "AF",
+      "centroid_lat": 8.4606,
+      "centroid_lon": -11.7799,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Sierra Leone"
+    },
+    {
+      "name": "Somalia",
+      "code": "SO",
+      "continent_code": "AF",
+      "centroid_lat": 5.1521,
+      "centroid_lon": 46.1996,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Somalia"
+    },
+    {
+      "name": "South Africa",
+      "code": "ZA",
+      "continent_code": "AF",
+      "centroid_lat": -30.5595,
+      "centroid_lon": 22.9375,
+      "admin_hierarchy": [
+        "Province",
+        "District",
+        "Municipality"
+      ],
+      "dataset_path": "data/Africa/South Africa"
+    },
+    {
+      "name": "South Sudan",
+      "code": "SS",
+      "continent_code": "AF",
+      "centroid_lat": 6.877,
+      "centroid_lon": 31.307,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/South Sudan"
+    },
+    {
+      "name": "Sudan",
+      "code": "SD",
+      "continent_code": "AF",
+      "centroid_lat": 12.8628,
+      "centroid_lon": 30.2176,
+      "admin_hierarchy": [
+        "State",
+        "Locality"
+      ],
+      "dataset_path": "data/Africa/Sudan"
+    },
+    {
+      "name": "Tanzania",
+      "code": "TZ",
+      "continent_code": "AF",
+      "centroid_lat": -6.369,
+      "centroid_lon": 34.8888,
+      "admin_hierarchy": [
+        "Region",
+        "District"
+      ],
+      "dataset_path": "data/Africa/Tanzania"
+    },
+    {
+      "name": "Togo",
+      "code": "TG",
+      "continent_code": "AF",
+      "centroid_lat": 8.6195,
+      "centroid_lon": 0.8248,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Togo"
+    },
+    {
+      "name": "Tunisia",
+      "code": "TN",
+      "continent_code": "AF",
+      "centroid_lat": 33.8869,
+      "centroid_lon": 9.5375,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Tunisia"
+    },
+    {
+      "name": "Uganda",
+      "code": "UG",
+      "continent_code": "AF",
+      "centroid_lat": 1.3733,
+      "centroid_lon": 32.2903,
+      "admin_hierarchy": [
+        "Region",
+        "District"
+      ],
+      "dataset_path": "data/Africa/Uganda"
+    },
+    {
+      "name": "Western Sahara",
+      "code": "EH",
+      "continent_code": "AF",
+      "centroid_lat": 24.2155,
+      "centroid_lon": -12.8858,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Western Sahara"
+    },
+    {
+      "name": "Zambia",
+      "code": "ZM",
+      "continent_code": "AF",
+      "centroid_lat": -13.1339,
+      "centroid_lon": 27.8493,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Zambia"
+    },
+    {
+      "name": "Zimbabwe",
+      "code": "ZW",
+      "continent_code": "AF",
+      "centroid_lat": -19.0154,
+      "centroid_lon": 29.1549,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Africa/Zimbabwe"
+    },
+    {
+      "name": "Albania",
+      "code": "AL",
+      "continent_code": "EU",
+      "centroid_lat": 41.1533,
+      "centroid_lon": 20.1683,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Albania"
+    },
+    {
+      "name": "Austria",
+      "code": "AT",
+      "continent_code": "EU",
+      "centroid_lat": 47.5162,
+      "centroid_lon": 14.5501,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Austria"
+    },
+    {
+      "name": "Belarus",
+      "code": "BY",
+      "continent_code": "EU",
+      "centroid_lat": 53.7098,
+      "centroid_lon": 27.9534,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Belarus"
+    },
+    {
+      "name": "Belgium",
+      "code": "BE",
+      "continent_code": "EU",
+      "centroid_lat": 50.8503,
+      "centroid_lon": 4.3517,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Belgium"
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "code": "BA",
+      "continent_code": "EU",
+      "centroid_lat": 43.9159,
+      "centroid_lon": 17.6791,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Bosnia and Herzegovina"
+    },
+    {
+      "name": "Bulgaria",
+      "code": "BG",
+      "continent_code": "EU",
+      "centroid_lat": 42.7339,
+      "centroid_lon": 25.4858,
+      "admin_hierarchy": [
+        "Province",
+        "Municipality"
+      ],
+      "dataset_path": "data/Europe/Bulgaria"
+    },
+    {
+      "name": "Croatia",
+      "code": "HR",
+      "continent_code": "EU",
+      "centroid_lat": 45.1,
+      "centroid_lon": 15.2,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Croatia"
+    },
+    {
+      "name": "Cyprus",
+      "code": "CY",
+      "continent_code": "EU",
+      "centroid_lat": 35.1264,
+      "centroid_lon": 33.4299,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Cyprus"
+    },
+    {
+      "name": "Czech Republic",
+      "code": "CZ",
+      "continent_code": "EU",
+      "centroid_lat": 49.8175,
+      "centroid_lon": 15.473,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Czech Republic"
+    },
+    {
+      "name": "Denmark",
+      "code": "DK",
+      "continent_code": "EU",
+      "centroid_lat": 56.2639,
+      "centroid_lon": 9.5018,
+      "admin_hierarchy": [
+        "Region",
+        "Municipality"
+      ],
+      "dataset_path": "data/Europe/Denmark"
+    },
+    {
+      "name": "Estonia",
+      "code": "EE",
+      "continent_code": "EU",
+      "centroid_lat": 58.5953,
+      "centroid_lon": 25.0136,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Estonia"
+    },
+    {
+      "name": "Finland",
+      "code": "FI",
+      "continent_code": "EU",
+      "centroid_lat": 61.9241,
+      "centroid_lon": 25.7482,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Finland"
+    },
+    {
+      "name": "France",
+      "code": "FR",
+      "continent_code": "EU",
+      "centroid_lat": 46.6034,
+      "centroid_lon": 1.8883,
+      "admin_hierarchy": [
+        "Region",
+        "Department"
+      ],
+      "dataset_path": "data/Europe/France"
+    },
+    {
+      "name": "Germany",
+      "code": "DE",
+      "continent_code": "EU",
+      "centroid_lat": 51.1657,
+      "centroid_lon": 10.4515,
+      "admin_hierarchy": [
+        "State",
+        "District"
+      ],
+      "dataset_path": "data/Europe/Germany"
+    },
+    {
+      "name": "Greece",
+      "code": "GR",
+      "continent_code": "EU",
+      "centroid_lat": 39.0742,
+      "centroid_lon": 21.8243,
+      "admin_hierarchy": [
+        "Region",
+        "Regional Unit"
+      ],
+      "dataset_path": "data/Europe/Greece"
+    },
+    {
+      "name": "Hungary",
+      "code": "HU",
+      "continent_code": "EU",
+      "centroid_lat": 47.1625,
+      "centroid_lon": 19.5033,
+      "admin_hierarchy": [
+        "County",
+        "District"
+      ],
+      "dataset_path": "data/Europe/Hungary"
+    },
+    {
+      "name": "Iceland",
+      "code": "IS",
+      "continent_code": "EU",
+      "centroid_lat": 64.9631,
+      "centroid_lon": -19.0208,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Iceland"
+    },
+    {
+      "name": "Ireland",
+      "code": "IE",
+      "continent_code": "EU",
+      "centroid_lat": 53.1424,
+      "centroid_lon": -7.6921,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Ireland"
+    },
+    {
+      "name": "Italy",
+      "code": "IT",
+      "continent_code": "EU",
+      "centroid_lat": 41.8719,
+      "centroid_lon": 12.5674,
+      "admin_hierarchy": [
+        "Region",
+        "Province",
+        "Municipality"
+      ],
+      "dataset_path": "data/Europe/Italy"
+    },
+    {
+      "name": "Kosovo",
+      "code": "XK",
+      "continent_code": "EU",
+      "centroid_lat": 42.6026,
+      "centroid_lon": 20.903,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Kosovo"
+    },
+    {
+      "name": "Latvia",
+      "code": "LV",
+      "continent_code": "EU",
+      "centroid_lat": 56.8796,
+      "centroid_lon": 24.6032,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Latvia"
+    },
+    {
+      "name": "Lithuania",
+      "code": "LT",
+      "continent_code": "EU",
+      "centroid_lat": 55.1694,
+      "centroid_lon": 23.8813,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Lithuania"
+    },
+    {
+      "name": "Luxembourg",
+      "code": "LU",
+      "continent_code": "EU",
+      "centroid_lat": 49.8153,
+      "centroid_lon": 6.1296,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Luxembourg"
+    },
+    {
+      "name": "Malta",
+      "code": "MT",
+      "continent_code": "EU",
+      "centroid_lat": 35.9375,
+      "centroid_lon": 14.3754,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Malta"
+    },
+    {
+      "name": "Moldova",
+      "code": "MD",
+      "continent_code": "EU",
+      "centroid_lat": 47.4116,
+      "centroid_lon": 28.3699,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Moldova"
+    },
+    {
+      "name": "Montenegro",
+      "code": "ME",
+      "continent_code": "EU",
+      "centroid_lat": 42.7087,
+      "centroid_lon": 19.3744,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Montenegro"
+    },
+    {
+      "name": "Netherlands",
+      "code": "NL",
+      "continent_code": "EU",
+      "centroid_lat": 52.1326,
+      "centroid_lon": 5.2913,
+      "admin_hierarchy": [
+        "Province",
+        "Municipality"
+      ],
+      "dataset_path": "data/Europe/Netherlands"
+    },
+    {
+      "name": "North Macedonia",
+      "code": "MK",
+      "continent_code": "EU",
+      "centroid_lat": 41.6086,
+      "centroid_lon": 21.7453,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/North Macedonia"
+    },
+    {
+      "name": "Norway",
+      "code": "NO",
+      "continent_code": "EU",
+      "centroid_lat": 60.472,
+      "centroid_lon": 8.4689,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Norway"
+    },
+    {
+      "name": "Poland",
+      "code": "PL",
+      "continent_code": "EU",
+      "centroid_lat": 51.9194,
+      "centroid_lon": 19.1451,
+      "admin_hierarchy": [
+        "Voivodeship",
+        "County"
+      ],
+      "dataset_path": "data/Europe/Poland"
+    },
+    {
+      "name": "Portugal",
+      "code": "PT",
+      "continent_code": "EU",
+      "centroid_lat": 39.3999,
+      "centroid_lon": -8.2245,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Portugal"
+    },
+    {
+      "name": "Romania",
+      "code": "RO",
+      "continent_code": "EU",
+      "centroid_lat": 45.9432,
+      "centroid_lon": 24.9668,
+      "admin_hierarchy": [
+        "County",
+        "Municipality"
+      ],
+      "dataset_path": "data/Europe/Romania"
+    },
+    {
+      "name": "Russia",
+      "code": "RU",
+      "continent_code": "EU",
+      "centroid_lat": 61.524,
+      "centroid_lon": 105.3188,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Russia"
+    },
+    {
+      "name": "Serbia",
+      "code": "RS",
+      "continent_code": "EU",
+      "centroid_lat": 44.0165,
+      "centroid_lon": 21.0059,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Serbia"
+    },
+    {
+      "name": "Slovakia",
+      "code": "SK",
+      "continent_code": "EU",
+      "centroid_lat": 48.669,
+      "centroid_lon": 19.699,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Slovakia"
+    },
+    {
+      "name": "Slovenia",
+      "code": "SI",
+      "continent_code": "EU",
+      "centroid_lat": 46.1512,
+      "centroid_lon": 14.9955,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Slovenia"
+    },
+    {
+      "name": "Spain",
+      "code": "ES",
+      "continent_code": "EU",
+      "centroid_lat": 40.4637,
+      "centroid_lon": -3.7492,
+      "admin_hierarchy": [
+        "Autonomous Community",
+        "Province"
+      ],
+      "dataset_path": "data/Europe/Spain"
+    },
+    {
+      "name": "Sweden",
+      "code": "SE",
+      "continent_code": "EU",
+      "centroid_lat": 60.1282,
+      "centroid_lon": 18.6435,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Sweden"
+    },
+    {
+      "name": "Switzerland",
+      "code": "CH",
+      "continent_code": "EU",
+      "centroid_lat": 46.8182,
+      "centroid_lon": 8.2275,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Europe/Switzerland"
+    },
+    {
+      "name": "Ukraine",
+      "code": "UA",
+      "continent_code": "EU",
+      "centroid_lat": 48.3794,
+      "centroid_lon": 31.1656,
+      "admin_hierarchy": [
+        "Oblast",
+        "Raion"
+      ],
+      "dataset_path": "data/Europe/Ukraine"
+    },
+    {
+      "name": "United Kingdom",
+      "code": "GB",
+      "continent_code": "EU",
+      "centroid_lat": 55.3781,
+      "centroid_lon": -3.436,
+      "admin_hierarchy": [
+        "Country",
+        "County"
+      ],
+      "dataset_path": "data/Europe/United Kingdom"
+    },
+    {
+      "name": "Bahamas",
+      "code": "BS",
+      "continent_code": "NA",
+      "centroid_lat": 25.0343,
+      "centroid_lon": -77.3963,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Bahamas"
+    },
+    {
+      "name": "Barbados",
+      "code": "BB",
+      "continent_code": "NA",
+      "centroid_lat": 13.1939,
+      "centroid_lon": -59.5432,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Barbados"
+    },
+    {
+      "name": "Belize",
+      "code": "BZ",
+      "continent_code": "NA",
+      "centroid_lat": 17.1899,
+      "centroid_lon": -88.4976,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Belize"
+    },
+    {
+      "name": "Canada",
+      "code": "CA",
+      "continent_code": "NA",
+      "centroid_lat": 56.1304,
+      "centroid_lon": -106.3468,
+      "admin_hierarchy": [
+        "Province",
+        "Territory"
+      ],
+      "dataset_path": "data/North America/Canada"
+    },
+    {
+      "name": "Costa Rica",
+      "code": "CR",
+      "continent_code": "NA",
+      "centroid_lat": 9.7489,
+      "centroid_lon": -83.7534,
+      "admin_hierarchy": [
+        "Province",
+        "Canton"
+      ],
+      "dataset_path": "data/North America/Costa Rica"
+    },
+    {
+      "name": "Cuba",
+      "code": "CU",
+      "continent_code": "NA",
+      "centroid_lat": 21.5218,
+      "centroid_lon": -77.7812,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Cuba"
+    },
+    {
+      "name": "Dominican Republic",
+      "code": "DO",
+      "continent_code": "NA",
+      "centroid_lat": 18.7357,
+      "centroid_lon": -70.1627,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Dominican Republic"
+    },
+    {
+      "name": "El Salvador",
+      "code": "SV",
+      "continent_code": "NA",
+      "centroid_lat": 13.7942,
+      "centroid_lon": -88.8965,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/El Salvador"
+    },
+    {
+      "name": "Guatemala",
+      "code": "GT",
+      "continent_code": "NA",
+      "centroid_lat": 15.7835,
+      "centroid_lon": -90.2308,
+      "admin_hierarchy": [
+        "Department",
+        "Municipality"
+      ],
+      "dataset_path": "data/North America/Guatemala"
+    },
+    {
+      "name": "Haiti",
+      "code": "HT",
+      "continent_code": "NA",
+      "centroid_lat": 18.9712,
+      "centroid_lon": -72.2852,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Haiti"
+    },
+    {
+      "name": "Honduras",
+      "code": "HN",
+      "continent_code": "NA",
+      "centroid_lat": 15.2,
+      "centroid_lon": -86.2419,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Honduras"
+    },
+    {
+      "name": "Jamaica",
+      "code": "JM",
+      "continent_code": "NA",
+      "centroid_lat": 18.1096,
+      "centroid_lon": -77.2975,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Jamaica"
+    },
+    {
+      "name": "Mexico",
+      "code": "MX",
+      "continent_code": "NA",
+      "centroid_lat": 23.6345,
+      "centroid_lon": -102.5528,
+      "admin_hierarchy": [
+        "State",
+        "Municipality"
+      ],
+      "dataset_path": "data/North America/Mexico"
+    },
+    {
+      "name": "Nicaragua",
+      "code": "NI",
+      "continent_code": "NA",
+      "centroid_lat": 12.8654,
+      "centroid_lon": -85.2072,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Nicaragua"
+    },
+    {
+      "name": "Panama",
+      "code": "PA",
+      "continent_code": "NA",
+      "centroid_lat": 8.538,
+      "centroid_lon": -80.7821,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Panama"
+    },
+    {
+      "name": "Trinidad and Tobago",
+      "code": "TT",
+      "continent_code": "NA",
+      "centroid_lat": 10.6918,
+      "centroid_lon": -61.2225,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/North America/Trinidad and Tobago"
+    },
+    {
+      "name": "United States",
+      "code": "US",
+      "continent_code": "NA",
+      "centroid_lat": 37.0902,
+      "centroid_lon": -95.7129,
+      "admin_hierarchy": [
+        "State",
+        "County"
+      ],
+      "dataset_path": "data/North America/United States"
+    },
+    {
+      "name": "Argentina",
+      "code": "AR",
+      "continent_code": "SA",
+      "centroid_lat": -38.4161,
+      "centroid_lon": -63.6167,
+      "admin_hierarchy": [
+        "Province",
+        "Department"
+      ],
+      "dataset_path": "data/South America/Argentina"
+    },
+    {
+      "name": "Bolivia",
+      "code": "BO",
+      "continent_code": "SA",
+      "centroid_lat": -16.2902,
+      "centroid_lon": -63.5887,
+      "admin_hierarchy": [
+        "Department",
+        "Province"
+      ],
+      "dataset_path": "data/South America/Bolivia"
+    },
+    {
+      "name": "Brazil",
+      "code": "BR",
+      "continent_code": "SA",
+      "centroid_lat": -14.235,
+      "centroid_lon": -51.9253,
+      "admin_hierarchy": [
+        "State",
+        "Municipality"
+      ],
+      "dataset_path": "data/South America/Brazil"
+    },
+    {
+      "name": "Chile",
+      "code": "CL",
+      "continent_code": "SA",
+      "centroid_lat": -35.6751,
+      "centroid_lon": -71.543,
+      "admin_hierarchy": [
+        "Region",
+        "Province"
+      ],
+      "dataset_path": "data/South America/Chile"
+    },
+    {
+      "name": "Colombia",
+      "code": "CO",
+      "continent_code": "SA",
+      "centroid_lat": 4.5709,
+      "centroid_lon": -74.2973,
+      "admin_hierarchy": [
+        "Department",
+        "Municipality"
+      ],
+      "dataset_path": "data/South America/Colombia"
+    },
+    {
+      "name": "Ecuador",
+      "code": "EC",
+      "continent_code": "SA",
+      "centroid_lat": -1.8312,
+      "centroid_lon": -78.1834,
+      "admin_hierarchy": [
+        "Province",
+        "Canton"
+      ],
+      "dataset_path": "data/South America/Ecuador"
+    },
+    {
+      "name": "Guyana",
+      "code": "GY",
+      "continent_code": "SA",
+      "centroid_lat": 4.8604,
+      "centroid_lon": -58.9302,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/South America/Guyana"
+    },
+    {
+      "name": "Paraguay",
+      "code": "PY",
+      "continent_code": "SA",
+      "centroid_lat": -23.4425,
+      "centroid_lon": -58.4438,
+      "admin_hierarchy": [
+        "Department",
+        "District"
+      ],
+      "dataset_path": "data/South America/Paraguay"
+    },
+    {
+      "name": "Peru",
+      "code": "PE",
+      "continent_code": "SA",
+      "centroid_lat": -9.19,
+      "centroid_lon": -75.0152,
+      "admin_hierarchy": [
+        "Department",
+        "Province"
+      ],
+      "dataset_path": "data/South America/Peru"
+    },
+    {
+      "name": "Suriname",
+      "code": "SR",
+      "continent_code": "SA",
+      "centroid_lat": 3.9193,
+      "centroid_lon": -56.0278,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/South America/Suriname"
+    },
+    {
+      "name": "Uruguay",
+      "code": "UY",
+      "continent_code": "SA",
+      "centroid_lat": -32.5228,
+      "centroid_lon": -55.7658,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/South America/Uruguay"
+    },
+    {
+      "name": "Venezuela",
+      "code": "VE",
+      "continent_code": "SA",
+      "centroid_lat": 6.4238,
+      "centroid_lon": -66.5897,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/South America/Venezuela"
+    },
+    {
+      "name": "Australia",
+      "code": "AU",
+      "continent_code": "OC",
+      "centroid_lat": -25.2744,
+      "centroid_lon": 133.7751,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Australia"
+    },
+    {
+      "name": "Fiji",
+      "code": "FJ",
+      "continent_code": "OC",
+      "centroid_lat": -17.7134,
+      "centroid_lon": 178.065,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Fiji"
+    },
+    {
+      "name": "Kiribati",
+      "code": "KI",
+      "continent_code": "OC",
+      "centroid_lat": -3.3704,
+      "centroid_lon": -168.734,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Kiribati"
+    },
+    {
+      "name": "Marshall Islands",
+      "code": "MH",
+      "continent_code": "OC",
+      "centroid_lat": 7.1315,
+      "centroid_lon": 171.1845,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Marshall Islands"
+    },
+    {
+      "name": "Micronesia",
+      "code": "FM",
+      "continent_code": "OC",
+      "centroid_lat": 7.4256,
+      "centroid_lon": 150.5508,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Micronesia"
+    },
+    {
+      "name": "Nauru",
+      "code": "NR",
+      "continent_code": "OC",
+      "centroid_lat": -0.5228,
+      "centroid_lon": 166.9315,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Nauru"
+    },
+    {
+      "name": "New Zealand",
+      "code": "NZ",
+      "continent_code": "OC",
+      "centroid_lat": -40.9006,
+      "centroid_lon": 174.886,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/New Zealand"
+    },
+    {
+      "name": "Palau",
+      "code": "PW",
+      "continent_code": "OC",
+      "centroid_lat": 7.515,
+      "centroid_lon": 134.5825,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Palau"
+    },
+    {
+      "name": "Papua New Guinea",
+      "code": "PG",
+      "continent_code": "OC",
+      "centroid_lat": -6.315,
+      "centroid_lon": 143.9555,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Papua New Guinea"
+    },
+    {
+      "name": "Samoa",
+      "code": "WS",
+      "continent_code": "OC",
+      "centroid_lat": -13.759,
+      "centroid_lon": -172.1046,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Samoa"
+    },
+    {
+      "name": "Solomon Islands",
+      "code": "SB",
+      "continent_code": "OC",
+      "centroid_lat": -9.6457,
+      "centroid_lon": 160.1562,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Solomon Islands"
+    },
+    {
+      "name": "Tonga",
+      "code": "TO",
+      "continent_code": "OC",
+      "centroid_lat": -21.179,
+      "centroid_lon": -175.1982,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Tonga"
+    },
+    {
+      "name": "Tuvalu",
+      "code": "TV",
+      "continent_code": "OC",
+      "centroid_lat": -7.1095,
+      "centroid_lon": 177.6493,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Tuvalu"
+    },
+    {
+      "name": "Vanuatu",
+      "code": "VU",
+      "continent_code": "OC",
+      "centroid_lat": -15.3767,
+      "centroid_lon": 166.9592,
+      "admin_hierarchy": [
+        "State"
+      ],
+      "dataset_path": "data/Oceania/Vanuatu"
+    }
   ]
 }

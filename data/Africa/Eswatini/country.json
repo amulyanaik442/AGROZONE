@@ -1,0 +1,11 @@
+{
+  "name": "Eswatini",
+  "code": "SZ",
+  "continent": "Africa",
+  "centroid_lat": -26.5225,
+  "centroid_lon": 31.4659,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

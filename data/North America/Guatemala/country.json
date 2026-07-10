@@ -1,0 +1,11 @@
+{
+  "name": "Guatemala",
+  "code": "GT",
+  "continent": "North America",
+  "centroid_lat": 15.7835,
+  "centroid_lon": -90.2308,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

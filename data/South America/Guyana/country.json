@@ -1,0 +1,11 @@
+{
+  "name": "Guyana",
+  "code": "GY",
+  "continent": "South America",
+  "centroid_lat": 4.8604,
+  "centroid_lon": -58.9302,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

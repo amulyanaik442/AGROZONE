@@ -1,0 +1,11 @@
+{
+  "name": "Togo",
+  "code": "TG",
+  "continent": "Africa",
+  "centroid_lat": 8.6195,
+  "centroid_lon": 0.8248,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

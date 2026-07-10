@@ -1,0 +1,11 @@
+{
+  "name": "Seychelles",
+  "code": "SC",
+  "continent": "Africa",
+  "centroid_lat": -4.6796,
+  "centroid_lon": 55.492,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

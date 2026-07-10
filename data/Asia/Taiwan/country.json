@@ -1,0 +1,11 @@
+{
+  "name": "Taiwan",
+  "code": "TW",
+  "continent": "Asia",
+  "centroid_lat": 23.6978,
+  "centroid_lon": 120.9605,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

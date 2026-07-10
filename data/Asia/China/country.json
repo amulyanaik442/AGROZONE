@@ -1,0 +1,11 @@
+{
+  "name": "China",
+  "code": "CN",
+  "continent": "Asia",
+  "centroid_lat": 35.8617,
+  "centroid_lon": 104.1954,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

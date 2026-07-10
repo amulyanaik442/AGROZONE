@@ -1,0 +1,11 @@
+{
+  "name": "Lithuania",
+  "code": "LT",
+  "continent": "Europe",
+  "centroid_lat": 55.1694,
+  "centroid_lon": 23.8813,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

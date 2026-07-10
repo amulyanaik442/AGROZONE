@@ -1,0 +1,11 @@
+{
+  "name": "Moldova",
+  "code": "MD",
+  "continent": "Europe",
+  "centroid_lat": 47.4116,
+  "centroid_lon": 28.3699,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

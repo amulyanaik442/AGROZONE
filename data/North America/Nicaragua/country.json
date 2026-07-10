@@ -1,0 +1,11 @@
+{
+  "name": "Nicaragua",
+  "code": "NI",
+  "continent": "North America",
+  "centroid_lat": 12.8654,
+  "centroid_lon": -85.2072,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

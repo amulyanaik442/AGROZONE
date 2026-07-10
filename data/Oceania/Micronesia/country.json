@@ -1,0 +1,11 @@
+{
+  "name": "Micronesia",
+  "code": "FM",
+  "continent": "Oceania",
+  "centroid_lat": 7.4256,
+  "centroid_lon": 150.5508,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

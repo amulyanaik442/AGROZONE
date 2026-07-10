@@ -1,0 +1,11 @@
+{
+  "name": "Slovakia",
+  "code": "SK",
+  "continent": "Europe",
+  "centroid_lat": 48.669,
+  "centroid_lon": 19.699,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

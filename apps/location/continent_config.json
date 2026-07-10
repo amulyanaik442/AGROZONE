@@ -3,26 +3,68 @@
     {
       "name": "Africa",
       "code": "AF",
-      "bounding_box": {"lat_min": -35.0, "lat_max": 37.5, "lon_min": -20.0, "lon_max": 55.0},
+      "bounding_box": {
+        "lat_min": -35.0,
+        "lat_max": 37.5,
+        "lon_min": -20.0,
+        "lon_max": 55.0
+      },
       "description": "Includes all African nations"
     },
     {
       "name": "Asia",
       "code": "AS",
-      "bounding_box": {"lat_min": -11.0, "lat_max": 81.0, "lon_min": 55.0, "lon_max": 180.0},
+      "bounding_box": {
+        "lat_min": -11.0,
+        "lat_max": 81.0,
+        "lon_min": 55.0,
+        "lon_max": 180.0
+      },
       "description": "Includes India, China, Japan, SE Asia, Middle East"
     },
     {
       "name": "Europe",
       "code": "EU",
-      "bounding_box": {"lat_min": 34.0, "lat_max": 71.0, "lon_min": -10.0, "lon_max": 40.0},
+      "bounding_box": {
+        "lat_min": 34.0,
+        "lat_max": 71.0,
+        "lon_min": -10.0,
+        "lon_max": 40.0
+      },
       "description": "Includes EU, UK, Scandinavia, Eastern Europe"
     },
     {
-      "name": "America",
-      "code": "AM",
-      "bounding_box": {"lat_min": -56.0, "lat_max": 72.0, "lon_min": -170.0, "lon_max": -35.0},
-      "description": "North, Central, and South America"
+      "name": "North America",
+      "code": "NA",
+      "bounding_box": {
+        "lat_min": 7.0,
+        "lat_max": 72.0,
+        "lon_min": -170.0,
+        "lon_max": -50.0
+      },
+      "description": "North and Central America"
+    },
+    {
+      "name": "South America",
+      "code": "SA",
+      "bounding_box": {
+        "lat_min": -56.0,
+        "lat_max": 12.0,
+        "lon_min": -82.0,
+        "lon_max": -34.0
+      },
+      "description": "South American continent"
+    },
+    {
+      "name": "Oceania",
+      "code": "OC",
+      "bounding_box": {
+        "lat_min": -47.0,
+        "lat_max": 0.0,
+        "lon_min": 110.0,
+        "lon_max": 180.0
+      },
+      "description": "Australia, New Zealand, Pacific Islands"
     }
   ]
 }

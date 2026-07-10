@@ -1,0 +1,11 @@
+{
+  "name": "Bhutan",
+  "code": "BT",
+  "continent": "Asia",
+  "centroid_lat": 27.5142,
+  "centroid_lon": 90.4336,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Armenia",
+  "code": "AM",
+  "continent": "Asia",
+  "centroid_lat": 40.0691,
+  "centroid_lon": 45.0382,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

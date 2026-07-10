@@ -1,0 +1,11 @@
+{
+  "name": "Mauritania",
+  "code": "MR",
+  "continent": "Africa",
+  "centroid_lat": 21.0079,
+  "centroid_lon": -10.9408,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

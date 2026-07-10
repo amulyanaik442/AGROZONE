@@ -1,0 +1,11 @@
+{
+  "name": "Cameroon",
+  "code": "CM",
+  "continent": "Africa",
+  "centroid_lat": 7.3697,
+  "centroid_lon": 12.3547,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Libya",
+  "code": "LY",
+  "continent": "Africa",
+  "centroid_lat": 26.3351,
+  "centroid_lon": 17.2283,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

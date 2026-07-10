@@ -1,0 +1,11 @@
+{
+  "name": "Azerbaijan",
+  "code": "AZ",
+  "continent": "Asia",
+  "centroid_lat": 40.1431,
+  "centroid_lon": 47.5769,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Bahrain",
+  "code": "BH",
+  "continent": "Asia",
+  "centroid_lat": 26.0667,
+  "centroid_lon": 50.5577,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

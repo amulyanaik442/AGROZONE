@@ -1,0 +1,11 @@
+{
+  "name": "Venezuela",
+  "code": "VE",
+  "continent": "South America",
+  "centroid_lat": 6.4238,
+  "centroid_lon": -66.5897,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

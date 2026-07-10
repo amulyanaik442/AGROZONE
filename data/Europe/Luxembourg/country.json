@@ -1,0 +1,11 @@
+{
+  "name": "Luxembourg",
+  "code": "LU",
+  "continent": "Europe",
+  "centroid_lat": 49.8153,
+  "centroid_lon": 6.1296,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

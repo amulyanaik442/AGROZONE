@@ -1,0 +1,11 @@
+{
+  "name": "Norway",
+  "code": "NO",
+  "continent": "Europe",
+  "centroid_lat": 60.472,
+  "centroid_lon": 8.4689,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

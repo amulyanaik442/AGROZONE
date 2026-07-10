@@ -1,0 +1,11 @@
+{
+  "name": "Turkmenistan",
+  "code": "TM",
+  "continent": "Asia",
+  "centroid_lat": 38.9697,
+  "centroid_lon": 59.5563,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

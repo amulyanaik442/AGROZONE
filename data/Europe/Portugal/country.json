@@ -1,0 +1,11 @@
+{
+  "name": "Portugal",
+  "code": "PT",
+  "continent": "Europe",
+  "centroid_lat": 39.3999,
+  "centroid_lon": -8.2245,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

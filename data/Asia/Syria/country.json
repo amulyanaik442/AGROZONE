@@ -1,0 +1,11 @@
+{
+  "name": "Syria",
+  "code": "SY",
+  "continent": "Asia",
+  "centroid_lat": 34.8021,
+  "centroid_lon": 38.9968,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

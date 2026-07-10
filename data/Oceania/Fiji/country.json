@@ -1,0 +1,11 @@
+{
+  "name": "Fiji",
+  "code": "FJ",
+  "continent": "Oceania",
+  "centroid_lat": -17.7134,
+  "centroid_lon": 178.065,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

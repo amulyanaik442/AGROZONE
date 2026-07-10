@@ -1,0 +1,11 @@
+{
+  "name": "Niger",
+  "code": "NE",
+  "continent": "Africa",
+  "centroid_lat": 17.6078,
+  "centroid_lon": 8.0817,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

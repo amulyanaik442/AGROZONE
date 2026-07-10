@@ -1,0 +1,11 @@
+{
+  "name": "Chad",
+  "code": "TD",
+  "continent": "Africa",
+  "centroid_lat": 15.4542,
+  "centroid_lon": 18.7322,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

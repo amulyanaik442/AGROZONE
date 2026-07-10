@@ -1,9 +1,0 @@
-{
-  "name": "Canada",
-  "code": "CA",
-  "continent": "America",
-  "centroid_lat": 56.1304,
-  "centroid_lon": -106.3468,
-  "admin_hierarchy": ["Province", "Territory"],
-  "crop_excel_files": []
-}

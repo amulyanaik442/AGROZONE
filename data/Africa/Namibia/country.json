@@ -1,0 +1,11 @@
+{
+  "name": "Namibia",
+  "code": "NA",
+  "continent": "Africa",
+  "centroid_lat": -22.9576,
+  "centroid_lon": 18.4904,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

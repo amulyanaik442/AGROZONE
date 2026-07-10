@@ -1,0 +1,11 @@
+{
+  "name": "Turkey",
+  "code": "TR",
+  "continent": "Asia",
+  "centroid_lat": 38.9637,
+  "centroid_lon": 35.2433,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

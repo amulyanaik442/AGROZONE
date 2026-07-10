@@ -1,0 +1,11 @@
+{
+  "name": "Angola",
+  "code": "AO",
+  "continent": "Africa",
+  "centroid_lat": -11.2027,
+  "centroid_lon": 17.8739,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

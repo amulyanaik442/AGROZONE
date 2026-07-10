@@ -1,0 +1,11 @@
+{
+  "name": "Russia",
+  "code": "RU",
+  "continent": "Europe",
+  "centroid_lat": 61.524,
+  "centroid_lon": 105.3188,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

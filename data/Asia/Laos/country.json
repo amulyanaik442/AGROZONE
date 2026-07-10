@@ -1,0 +1,11 @@
+{
+  "name": "Laos",
+  "code": "LA",
+  "continent": "Asia",
+  "centroid_lat": 19.8563,
+  "centroid_lon": 102.4955,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

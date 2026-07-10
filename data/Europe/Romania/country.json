@@ -1,0 +1,11 @@
+{
+  "name": "Romania",
+  "code": "RO",
+  "continent": "Europe",
+  "centroid_lat": 45.9432,
+  "centroid_lon": 24.9668,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

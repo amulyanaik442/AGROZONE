@@ -1,0 +1,11 @@
+{
+  "name": "Poland",
+  "code": "PL",
+  "continent": "Europe",
+  "centroid_lat": 51.9194,
+  "centroid_lon": 19.1451,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

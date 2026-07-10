@@ -1,0 +1,11 @@
+{
+  "name": "Morocco",
+  "code": "MA",
+  "continent": "Africa",
+  "centroid_lat": 31.7917,
+  "centroid_lon": -7.0926,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

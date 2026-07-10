@@ -1,0 +1,11 @@
+{
+  "name": "Belarus",
+  "code": "BY",
+  "continent": "Europe",
+  "centroid_lat": 53.7098,
+  "centroid_lon": 27.9534,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

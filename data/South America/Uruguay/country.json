@@ -1,0 +1,11 @@
+{
+  "name": "Uruguay",
+  "code": "UY",
+  "continent": "South America",
+  "centroid_lat": -32.5228,
+  "centroid_lon": -55.7658,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

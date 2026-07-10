@@ -1,0 +1,11 @@
+{
+  "name": "Gabon",
+  "code": "GA",
+  "continent": "Africa",
+  "centroid_lat": -0.8037,
+  "centroid_lon": 11.6094,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Ethiopia",
+  "code": "ET",
+  "continent": "Africa",
+  "centroid_lat": 9.145,
+  "centroid_lon": 40.4897,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

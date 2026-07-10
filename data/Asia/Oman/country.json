@@ -1,0 +1,11 @@
+{
+  "name": "Oman",
+  "code": "OM",
+  "continent": "Asia",
+  "centroid_lat": 21.5126,
+  "centroid_lon": 55.9233,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

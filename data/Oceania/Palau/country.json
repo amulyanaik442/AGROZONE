@@ -1,0 +1,11 @@
+{
+  "name": "Palau",
+  "code": "PW",
+  "continent": "Oceania",
+  "centroid_lat": 7.515,
+  "centroid_lon": 134.5825,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

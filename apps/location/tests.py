@@ -16,7 +16,8 @@ class ContinentDetectionTests(TestCase):
     @classmethod
     def setUpTestData(cls):
         for name, code in [("Asia", "AS"), ("Africa", "AF"),
-                            ("Europe", "EU"), ("America", "AM")]:
+                            ("Europe", "EU"), ("North America", "NA"),
+                            ("South America", "SA"), ("Oceania", "OC")]:
             Continent.objects.create(name=name, code=code)
 
     def test_india_detects_asia(self):
@@ -44,15 +45,15 @@ class ContinentDetectionTests(TestCase):
         self.assertIsNotNone(result)
         self.assertEqual(result.code, "AF")
 
-    def test_usa_detects_america(self):
+    def test_usa_detects_north_america(self):
         result = resolve_continent(40.7128, -74.0060)
         self.assertIsNotNone(result)
-        self.assertEqual(result.code, "AM")
+        self.assertEqual(result.code, "NA")
 
-    def test_brazil_detects_america(self):
+    def test_brazil_detects_south_america(self):
         result = resolve_continent(-23.5505, -46.6333)
         self.assertIsNotNone(result)
-        self.assertEqual(result.code, "AM")
+        self.assertEqual(result.code, "SA")
 
     def test_france_detects_europe(self):
         result = resolve_continent(48.8566, 2.3522)
@@ -77,14 +78,14 @@ class CountryDetectionTests(TestCase):
     def setUpTestData(cls):
         asia = Continent.objects.create(name="Asia", code="AS")
         africa = Continent.objects.create(name="Africa", code="AF")
-        america = Continent.objects.create(name="America", code="AM")
+        na = Continent.objects.create(name="North America", code="NA")
         europe = Continent.objects.create(name="Europe", code="EU")
 
         Country.objects.create(name="India", code="IN", continent=asia,
                                 centroid_lat=20.5937, centroid_lon=78.9629)
         Country.objects.create(name="Nigeria", code="NG", continent=africa,
                                 centroid_lat=9.0820, centroid_lon=8.6753)
-        Country.objects.create(name="United States", code="US", continent=america,
+        Country.objects.create(name="United States", code="US", continent=na,
                                 centroid_lat=37.0902, centroid_lon=-95.7129)
         Country.objects.create(name="France", code="FR", continent=europe,
                                 centroid_lat=46.6034, centroid_lon=1.8883)
@@ -136,10 +137,10 @@ class GlobalLocationResolutionTests(TestCase):
     @classmethod
     def setUpTestData(cls):
         asia = Continent.objects.create(name="Asia", code="AS")
-        america = Continent.objects.create(name="America", code="AM")
+        na = Continent.objects.create(name="North America", code="NA")
         Country.objects.create(name="India", code="IN", continent=asia,
                                 centroid_lat=20.5937, centroid_lon=78.9629)
-        Country.objects.create(name="United States", code="US", continent=america,
+        Country.objects.create(name="United States", code="US", continent=na,
                                 centroid_lat=37.0902, centroid_lon=-95.7129)
 
     def test_full_resolve_india(self):
@@ -153,7 +154,7 @@ class GlobalLocationResolutionTests(TestCase):
         result = resolve_location_global(40.7128, -74.0060)
         self.assertIsNotNone(result["country"])
         self.assertEqual(result["country"].code, "US")
-        self.assertEqual(result["continent"].code, "AM")
+        self.assertEqual(result["continent"].code, "NA")
 
     def test_unresolvable_location(self):
         # Antarctica — no continent bounding box covers this

@@ -1,0 +1,11 @@
+{
+  "name": "Belize",
+  "code": "BZ",
+  "continent": "North America",
+  "centroid_lat": 17.1899,
+  "centroid_lon": -88.4976,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}

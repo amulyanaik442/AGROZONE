@@ -1,0 +1,11 @@
+{
+  "name": "Finland",
+  "code": "FI",
+  "continent": "Europe",
+  "centroid_lat": 61.9241,
+  "centroid_lon": 25.7482,
+  "admin_hierarchy": [
+    "State"
+  ],
+  "crop_excel_files": []
+}
