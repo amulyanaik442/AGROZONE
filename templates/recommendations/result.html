@@ -114,7 +114,6 @@
 
       {% if crop.notes %}<p class="crop-notes2">{{ crop.notes }}</p>{% endif %}
 
-      {% if crop.additional_info %}
       <div class="crop-feature-section">
         <button class="crop-feature-toggle" type="button" onclick="this.parentElement.classList.toggle('crop-feature-open')">
           <span>📋 Crop Guide</span>
@@ -124,32 +123,31 @@
           <div class="feature-grid">
             <div class="feature-item">
               <span class="feature-label">Crop Duration</span>
-              <span class="feature-value">{{ crop.additional_info.crop_duration }}</span>
+              <span class="feature-value">{% if crop.additional_info %}{{ crop.additional_info.crop_duration }}{% else %}Not available{% endif %}</span>
             </div>
             <div class="feature-item">
               <span class="feature-label">Best Sowing Season</span>
-              <span class="feature-value">{{ crop.additional_info.best_sowing_season }}</span>
+              <span class="feature-value">{% if crop.additional_info %}{{ crop.additional_info.best_sowing_season }}{% else %}Not available{% endif %}</span>
             </div>
             <div class="feature-item">
               <span class="feature-label">Water Requirement</span>
-              <span class="feature-value">{{ crop.additional_info.water_requirement }}</span>
+              <span class="feature-value">{% if crop.additional_info %}{{ crop.additional_info.water_requirement }}{% else %}Not available{% endif %}</span>
             </div>
             <div class="feature-item">
               <span class="feature-label">Common Pests</span>
-              <span class="feature-value">{{ crop.additional_info.common_pests }}</span>
+              <span class="feature-value">{% if crop.additional_info %}{{ crop.additional_info.common_pests }}{% else %}Not available{% endif %}</span>
             </div>
             <div class="feature-item">
               <span class="feature-label">Recommended Fertilizers</span>
-              <span class="feature-value">{{ crop.additional_info.recommended_fertilizers }}</span>
+              <span class="feature-value">{% if crop.additional_info %}{{ crop.additional_info.recommended_fertilizers }}{% else %}Not available{% endif %}</span>
             </div>
             <div class="feature-item">
               <span class="feature-label">Harvest Time</span>
-              <span class="feature-value">{{ crop.additional_info.harvest_time }}</span>
+              <span class="feature-value">{% if crop.additional_info %}{{ crop.additional_info.harvest_time }}{% else %}Not available{% endif %}</span>
             </div>
           </div>
         </div>
       </div>
-      {% endif %}
     </div>
 
   </div>

@@ -20,7 +20,7 @@ import openpyxl
 
 from django.conf import settings
 
-from .crop_utils import normalize_crop_name, extract_base_name, safe_get
+from .crop_utils import normalize_crop_name, extract_base_name, safe_get, INDIAN_TO_ENGLISH_CROP_NAMES
 
 
 # Column indices (1-based as they appear in the Excel)
@@ -212,7 +212,21 @@ class CropDataMapper:
             if base_norm in self._fallback:
                 return self._fallback[base_norm]
 
-        # Strategy 4: Partial substring match
+        # Strategy 4: Indian local name -> English name mapping
+        local_lower = crop_norm.strip()
+        if local_lower in INDIAN_TO_ENGLISH_CROP_NAMES:
+            english_name = INDIAN_TO_ENGLISH_CROP_NAMES[local_lower]
+            english_norm = normalize_crop_name(english_name)
+            english_lower = english_name.lower()
+            if country_key:
+                for key in [(country_key, english_norm), (country_key, english_lower)]:
+                    if key in self._index:
+                        return self._index[key]
+            for key in [english_norm, english_lower]:
+                if key in self._fallback:
+                    return self._fallback[key]
+
+        # Strategy 5: Partial substring match
         for fb_key, fb_entry in self._fallback.items():
             if fb_key in crop_norm or crop_norm in fb_key:
                 return fb_entry
