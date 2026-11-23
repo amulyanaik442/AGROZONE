@@ -21,6 +21,26 @@
 <form method="POST" action="/recommend/result/" class="soil-form" id="soilForm">
   {% csrf_token %}
 
+  <!-- ── One-Click Ticket Values Paste Section ────────────────── -->
+  <div class="ticket-paste-box" style="margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;background:#f0faf3;border:1.5px solid #087F5B;border-radius:12px;padding:1.1rem 1.4rem;box-shadow:0 2px 10px rgba(8,127,91,0.08);">
+    <div style="display:flex;align-items:center;gap:0.85rem;">
+      <div style="width:42px;height:42px;border-radius:10px;background:#087F5B;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+      </div>
+      <div>
+        <strong style="color:#123C35;font-size:1.05rem;display:block;">Have a Scanned Soil Test Ticket?</strong>
+        <span style="color:#556b64;font-size:0.85rem;">Transfer your SoiLENZ ticket coordinates &amp; chemical readings from Seed2Serve in one click</span>
+      </div>
+    </div>
+    <button type="button" id="pasteCropTicketBtn" class="btn btn-primary" style="background:#087F5B;border:none;padding:0.7rem 1.4rem;font-weight:700;display:inline-flex;align-items:center;gap:0.5rem;cursor:pointer;border-radius:8px;font-size:0.95rem;box-shadow:0 2px 8px rgba(8,127,91,0.25);color:#fff;">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+      <span id="pasteCropBtnText">📋 Paste Scanned Ticket Values</span>
+    </button>
+  </div>
+  <div id="cropPasteNotice" style="display:none;background:#DFF4E4;border:1.5px solid #b9e3ca;border-radius:10px;padding:0.85rem 1.15rem;margin-bottom:1.5rem;color:#0A5F4A;font-size:0.925rem;">
+    <strong>✓ Ticket values pasted!</strong> Review your GPS location and soil nutrient readings below, then click Predict.
+  </div>
+
   <!-- ── Gate 1: Location ──────────────────────────────────────── -->
   <section class="form-section">
     <h2 class="section-title">
@@ -239,6 +259,188 @@ function onContinentChange() {
 document.addEventListener('DOMContentLoaded', function() {
   var sel = document.getElementById('continentSelect');
   if (sel) { onContinentChange(); }
+
+  // ── Auto-fill from URL Query Parameters on page load ────────
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('ph') || params.get('lat') || params.get('n')) {
+    var urlData = {};
+    ['lat', 'lon', 'state_name', 'crop', 'ph', 'ec', 'oc', 'n', 'p', 'k', 'ca', 'mg', 's', 'fe', 'mn', 'cu', 'zn', 'b'].forEach(function(k) {
+      if (params.get(k) !== null) {
+        var num = parseFloat(params.get(k));
+        urlData[k] = isNaN(num) ? params.get(k) : num;
+      }
+    });
+    applySoilDataToAgrozoneForm(urlData);
+  }
+
+  // ── One-Click Clipboard Paste Button ────────────────────────
+  var pasteBtn = document.getElementById('pasteCropTicketBtn');
+  if (pasteBtn) {
+    pasteBtn.addEventListener('click', function() {
+      if (!navigator.clipboard || !navigator.clipboard.readText) {
+        fallbackPastePrompt();
+        return;
+      }
+
+      navigator.clipboard.readText()
+        .then(function(clipText) {
+          if (!clipText || !clipText.trim()) {
+            alert('Clipboard is empty! Please scan a ticket on Seed2Serve (localhost:3000) and click "Copy Soil Values" first.');
+            return;
+          }
+          var parsed = parseSoilDataString(clipText);
+          if (parsed && (parsed.ph !== undefined || parsed.n !== undefined || parsed.lat !== undefined)) {
+            applySoilDataToAgrozoneForm(parsed);
+          } else {
+            fallbackPastePrompt(clipText);
+          }
+        })
+        .catch(function(err) {
+          console.warn('Clipboard read error:', err);
+          fallbackPastePrompt();
+        });
+    });
+  }
 });
+
+function fallbackPastePrompt(initialVal) {
+  var raw = prompt('Paste your copied SEED2SERVE_SOIL_DATA text here (Ctrl+V):', initialVal || '');
+  if (raw && raw.trim()) {
+    var parsed = parseSoilDataString(raw);
+    if (parsed) {
+      applySoilDataToAgrozoneForm(parsed);
+    } else {
+      alert('Could not recognize soil ticket data in the pasted text.');
+    }
+  }
+}
+
+function parseSoilDataString(str) {
+  if (!str) return null;
+  var text = str.trim();
+
+  // 1. Check for SEED2SERVE_SOIL_DATA: prefix
+  if (text.indexOf('SEED2SERVE_SOIL_DATA:') !== -1) {
+    try {
+      var jsonPart = text.substring(text.indexOf('SEED2SERVE_SOIL_DATA:') + 'SEED2SERVE_SOIL_DATA:'.length).trim();
+      return JSON.parse(jsonPart);
+    } catch(e) {}
+  }
+
+  // 2. Direct JSON
+  if (text.startsWith('{') && text.endsWith('}')) {
+    try {
+      return JSON.parse(text);
+    } catch(e) {}
+  }
+
+  // 3. Fallback Regex Parsing for raw SoiLENZ ticket text
+  var data = {};
+  function extractNum(patterns) {
+    for (var i = 0; i < patterns.length; i++) {
+      var m = text.match(patterns[i]);
+      if (m && m[1]) {
+        var v = parseFloat(m[1].replace(',', '.').trim());
+        if (!isNaN(v)) return v;
+      }
+    }
+    return null;
+  }
+  data.ph = extractNum([/\bpH\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.ec = extractNum([/\bEC\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.oc = extractNum([/\bOC\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.n = extractNum([/\b(?:Nitrogen|N)\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.p = extractNum([/\b(?:Phosphorus|P)\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.k = extractNum([/\b(?:Potassium|K)\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.ca = extractNum([/\bCa\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.mg = extractNum([/\bMg\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.s = extractNum([/\bS\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.fe = extractNum([/\bFe\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.mn = extractNum([/\bMn\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.cu = extractNum([/\bCu\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.zn = extractNum([/\bZn\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+  data.b = extractNum([/\bB\s*(?:\([^)]*\))?\s*[:=-]?\s*(\d+(?:\.\d+)?)/i]);
+
+  var latLon = text.match(/(?:Lat\s*\/\s*Lon|GPS)\s*[:=-]?\s*(\d+\.\d+)\s*[/,]\s*(\d+\.\d+)/i);
+  if (latLon) {
+    data.lat = parseFloat(latLon[1]);
+    data.lon = parseFloat(latLon[2]);
+  }
+  return data;
+}
+
+function applySoilDataToAgrozoneForm(data) {
+  if (!data) return;
+  var filledCount = 0;
+
+  // 1. Location (GPS or State)
+  if (data.lat !== undefined && data.lon !== undefined && data.lat !== null && data.lon !== null) {
+    var latEl = document.getElementById('latInput');
+    var lonEl = document.getElementById('lonInput');
+    if (latEl && lonEl) {
+      latEl.value = data.lat;
+      lonEl.value = data.lon;
+      highlightField(latEl);
+      highlightField(lonEl);
+      filledCount += 2;
+
+      // Switch to GPS tab
+      var gpsBtn = document.querySelector('.location-tabs .tab-btn');
+      if (gpsBtn && typeof switchTab === 'function') {
+        switchTab('gps', gpsBtn);
+      }
+    }
+  }
+
+  // 2. Chemical and physical nutrients
+  var fieldNames = ['ph', 'ec', 'oc', 'n', 'p', 'k', 'ca', 'mg', 's', 'fe', 'mn', 'cu', 'zn', 'b'];
+  fieldNames.forEach(function(fieldName) {
+    var val = data[fieldName];
+    if (val !== undefined && val !== null && val !== '') {
+      var input = document.querySelector('input[name="' + fieldName + '"]');
+      if (input) {
+        input.value = val;
+        highlightField(input);
+        filledCount++;
+      }
+    }
+  });
+
+  if (filledCount > 0) {
+    var notice = document.getElementById('cropPasteNotice');
+    if (notice) notice.style.display = 'block';
+
+    var btnText = document.getElementById('pasteCropBtnText');
+    if (btnText) {
+      btnText.textContent = '✓ Ticket Values Pasted!';
+      var btn = document.getElementById('pasteCropTicketBtn');
+      if (btn) btn.style.background = '#065F46';
+      setTimeout(function() {
+        if (btnText) btnText.textContent = '📋 Paste Scanned Ticket Values';
+        if (btn) btn.style.background = '#087F5B';
+      }, 2500);
+    }
+  }
+}
+
+function highlightField(el) {
+  el.style.borderColor = '#087F5B';
+  el.style.backgroundColor = '#F0FAF3';
+  el.style.boxShadow = '0 0 0 3px rgba(8, 127, 91, 0.15)';
+  el.dispatchEvent(new Event('input', { bubbles: true }));
+  el.dispatchEvent(new Event('change', { bubbles: true }));
+
+  var parent = el.closest('.field') || el.parentElement;
+  if (parent) {
+    var label = parent.querySelector('label');
+    if (label && !label.querySelector('.ticket-tag')) {
+      var tag = document.createElement('span');
+      tag.className = 'ticket-tag';
+      tag.style.cssText = 'font-size:0.75rem;color:#0A5F4A;font-weight:600;margin-left:0.4rem;background:#DFF4E4;padding:0.15rem 0.4rem;border-radius:4px;';
+      tag.textContent = '✓ Pasted';
+      label.appendChild(tag);
+    }
+  }
+}
 </script>
 {% endblock %}
