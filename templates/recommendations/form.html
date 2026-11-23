@@ -373,6 +373,19 @@ function applySoilDataToAgrozoneForm(data) {
   if (!data) return;
   var filledCount = 0;
 
+  // Clear previous values and tags first to avoid stale data
+  var fieldNames = ['ph', 'ec', 'oc', 'n', 'p', 'k', 'ca', 'mg', 's', 'fe', 'mn', 'cu', 'zn', 'b'];
+  fieldNames.forEach(function(fieldName) {
+    var input = document.querySelector('input[name="' + fieldName + '"]');
+    if (input) {
+      input.value = '';
+      input.style.borderColor = '';
+      input.style.backgroundColor = '';
+      input.style.boxShadow = '';
+    }
+  });
+  document.querySelectorAll('.ticket-tag').forEach(function(tag) { tag.remove(); });
+
   // 1. Location (GPS or State)
   if (data.lat !== undefined && data.lon !== undefined && data.lat !== null && data.lon !== null) {
     var latEl = document.getElementById('latInput');
